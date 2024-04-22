@@ -2,4 +2,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
     site: 'https://mudkip.dev',
+    compressHTML: true,
 })
