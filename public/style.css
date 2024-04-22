@@ -56,6 +56,10 @@ a {
     font-weight: bold;
 }
 
+a:hover {
+    filter: brightness(90%);
+}
+
 /* @keyframes animation {
     from {
         transform: translateY(25%);
