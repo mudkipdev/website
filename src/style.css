@@ -1,0 +1,99 @@
+:root {
+    --font: Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
+
+    --background: #24273A;
+    --crust: #181926;
+    --mantle: #1E2030;
+    --accent: #C6A0F6;
+    --text: #CAD3F5;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #EFF1F5;
+        --crust: #DCE0E8;
+        --mantle: #E6E9EF;
+        --accent: #8839Ef;
+        --text: #4C4F69;
+    }
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--crust);
+}
+
+body {
+    position: fixed;
+    top: 15%;
+    left: 30%;
+
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 1.5em;
+    line-height: 1.75;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 1em;
+        position: static;
+        top: auto;
+        left: auto;
+        font-size: 1.5em;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+a:hover {
+    filter: brightness(90%);
+}
+
+nav a {
+    margin-right: 1em;
+}
+
+.cards {
+    margin: 1em auto;
+    gap: 0.75em;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .card {
+    background-color: var(--mantle);
+    padding: 1em;
+    max-width: 30em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.5em;
+}
+
+.cards .card * {
+    margin: 0;
+}
+
+.cards .card a {
+    color: var(--text);
+    font-size: 1.25em;
+}
