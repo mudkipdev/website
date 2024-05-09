@@ -1,9 +1,10 @@
 ---
-import Page from '../layouts/Page.astro'
-import Card from '../components/Card.astro'
+import Page from "@layouts/Page.astro";
+import Card from "@components/Card.astro";
+import Cards from "@components/Cards.astro";
 ---
 <Page title="projects">
-    <div class="cards">
+    <Cards>
         <Card
             title="website"
             description="My personal website written with Astro and TypeScript."
@@ -13,16 +14,7 @@ import Card from '../components/Card.astro'
         <Card
             title="scnewsbot"
             description="A bot for the r/starcitizen Discord server."
-            url="https://github.com/mudkipdev/scnewsbot"
+            url = "https://github.com/mudkipdev/scnewsbot"
         />
-    </div>
+    </Cards>
 </Page>
-
-<style>
-    .cards {
-        margin: 1em auto;
-        gap: 0.75em;
-        display: flex;
-        flex-direction: column;
-    }
-</style>

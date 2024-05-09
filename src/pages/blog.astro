@@ -1,6 +1,27 @@
 ---
-import Page from '../layouts/Page.astro'
+import Page from "@layouts/Page.astro";
+import Card from "@components/Card.astro";
+import Cards from "@components/Cards.astro";
+
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
 ---
 <Page title="blog">
-    <p>coming soon...</p>
+    {
+        posts.length != 0
+        ? <p>there are currently no published posts</p>
+        : (
+            <Cards>
+            {posts.map(post => (
+                <Card
+                    title={post.data.title}
+                    description={post.body.substring(0, 100) + "..."}
+                    url={"/blog/" + post.slug}
+                    date={post.data.date}
+                />
+            ))}
+            </Cards>
+        )
+    }
+
 </Page>

@@ -1,0 +1,27 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
+import { getCollection } from 'astro:content';
+import Page from "@layouts/Page.astro";
+import Date from '@components/Date.astro';
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+export const getStaticPaths = (async () => {
+    const posts = await getCollection("blog");
+
+    return posts.map(post => {
+        return {
+            params: { slug: post.slug },
+            props: { post, data: post.data },
+        };
+    });
+}) satisfies GetStaticPaths;
+
+const { post, data } = Astro.props;
+const { Content } = await post.render();
+---
+<Page title="blog">
+    <h1>{data.title}</h1>
+    <Date date={data.date} />
+    <Content />
+</Page>

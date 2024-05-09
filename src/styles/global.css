@@ -1,3 +1,5 @@
+@import "catppuccin.css";
+
 :root {
     --font: Inter,
         -apple-system,
@@ -9,22 +11,6 @@
         Cantarell,
         "Helvetica Neue",
         sans-serif;
-
-    --background: #24273A;
-    --crust: #181926;
-    --mantle: #1E2030;
-    --accent: #C6A0F6;
-    --text: #CAD3F5;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --background: #EFF1F5;
-        --crust: #DCE0E8;
-        --mantle: #E6E9EF;
-        --accent: #8839Ef;
-        --text: #4C4F69;
-    }
 }
 
 body {
@@ -59,7 +45,18 @@ body {
     color: var(--crust);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.15em;
     margin: 0;
 }
 
