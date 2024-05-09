@@ -16,20 +16,21 @@ const { title, description, url } = Astro.props
 
 <style>
     .card {
-        background-color: var(--mantle);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
         padding: 1em;
         max-width: 30em;
-        height: 4em;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        background-color: var(--mantle);
         border-radius: 0.5em;
     }
-    
+
     .card * {
         margin: 0;
+        font-size: 0.85em;
     }
-    
+
     .card a {
         color: var(--text);
         font-size: 1.25em;
