@@ -6,9 +6,9 @@ import { remark } from 'remark'
 import strip from 'strip-markdown'
 
 const { post } = Astro.props
-const preview = await remark()
+const preview = String(await remark()
     .use(strip)
-    .process(post.body.substring(0, 200));
+    .process(post.body.substring(0, 200)));
 ---
 <Card
     title={post.data.title}
