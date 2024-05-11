@@ -11,7 +11,7 @@ const { title, description, url } = Astro.props
     <h2>{
         url == null
         ? title
-        : <a data-astro-prefetch="false" href={url}>{title}</a>
+        : <a href={url}>{title}</a>
     }</h2>
 
     <p>{description}</p>
