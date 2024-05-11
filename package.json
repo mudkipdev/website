@@ -13,6 +13,8 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/rss": "^4.0.5",
     "astro": "^4.6.3",
+    "remark": "^15.0.1",
+    "strip-markdown": "^6.0.0",
     "typescript": "^5.4.5"
   }
 }

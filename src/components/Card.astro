@@ -1,26 +1,21 @@
 ---
-import Date from "@components/Date.astro";
-
 interface Props {
     title: string;
     description: string;
     url?: string;
-    date?: Date;
 }
 
-const { title, description, url, date } = Astro.props
+const { title, description, url } = Astro.props
 ---
 <div class="card">
     <h2>{
         url == null
         ? title
-        : <a data-astro-prefetch="false" href={url} target="_blank">{title}</a>
+        : <a data-astro-prefetch="false" href={url}>{title}</a>
     }</h2>
 
-    <div>
-        <p>{description}</p>
-        {date != undefined && <Date date={date} />}
-    </div>
+    <p>{description}</p>
+    <slot name="after" />
 </div>
 
 <style>
@@ -44,5 +39,6 @@ const { title, description, url, date } = Astro.props
 
     .card p {
         font-size: 0.85em;
+        margin-bottom: 5px;
     }
 </style>

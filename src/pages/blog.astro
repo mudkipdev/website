@@ -1,6 +1,6 @@
 ---
 import Page from "@layouts/Page.astro";
-import Card from "@components/Card.astro";
+import Post from "@components/Post.astro";
 import Cards from "@components/Cards.astro";
 
 import { getCollection } from "astro:content";
@@ -13,12 +13,7 @@ const posts = await getCollection("blog");
         : (
             <Cards>
                 {posts.map(post => (
-                    <Card
-                        title={post.data.title}
-                        description={post.body.substring(0, 100) + "..."}
-                        url={"/blog/" + post.slug}
-                        date={post.data.date}
-                    />
+                    <Post post={post} />
                 ))}
             </Cards>
         )

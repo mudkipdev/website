@@ -1,6 +1,6 @@
 ---
 date: 2024-05-09
-title: Welcome
+title: welcome
 ---
 Welcome to my blog! I will occasionally post my thoughts and things I find interesting here.
 
