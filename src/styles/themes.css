@@ -8,6 +8,15 @@
     --latte-accent: #8839EF;
     --latte-text: #4C4F69;
 
+    --frappe-background: #303446;
+    --frappe-crust: #232634;
+    --frappe-mantle: #292C3C;
+    --frappe-surface-0: #414558;
+    --frappe-surface-1: #51576D;
+    --frappe-surface-2: #626880;
+    --frappe-accent: #CA9EE5;
+    --frappe-text: #C6D0F5;
+
     --macchiato-background: #24273A;
     --macchiato-crust: #181926;
     --macchiato-mantle: #1E2030;
@@ -16,6 +25,24 @@
     --macchiato-surface-2: #5B6078;
     --macchiato-accent: #C6A0F6;
     --macchiato-text: #CAD3F5;
+
+    --mocha-background: #1E1E2E;
+    --mocha-crust: #11111B;
+    --mocha-mantle: #181825;
+    --mocha-surface-0: #313244;
+    --mocha-surface-1: #444759;
+    --mocha-surface-2: #585B6F;
+    --mocha-accent: #CBA5F7;
+    --mocha-text: #CDD6F3;
+
+    --oled-background: #000000;
+    --oled-crust: #010101;
+    --oled-mantle: #020202;
+    --oled-surface-0: var(--mocha-surface-0);
+    --oled-surface-1: var(--mocha-surface-1);
+    --oled-surface-2: var(--mocha-surface-2);
+    --oled-accent: var(--mocha-accent);
+    --oled-text: var(--mocha-text);
 }
 
 @media (prefers-color-scheme: light) {
