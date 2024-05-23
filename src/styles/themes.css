@@ -45,28 +45,14 @@
     --oled-text: var(--mocha-text);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --background: var(--latte-background);
-        --crust: var(--latte-crust);
-        --mantle: var(--latte-mantle);
-        --surface-0: var(--latte-surface-0);
-        --surface-1: var(--latte-surface-1);
-        --surface-2: var(--latte-surface-2);
-        --accent: var(--latte-accent);
-        --text: var(--latte-text);
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: var(--macchiato-background);
-        --crust: var(--macchiato-crust);
-        --mantle: var(--macchiato-mantle);
-        --surface-0: var(--macchiato-surface-0);
-        --surface-1: var(--macchiato-surface-1);
-        --surface-2: var(--macchiato-surface-2);
-        --accent: var(--macchiato-accent);
-        --text: var(--macchiato-text);
-    }
+/* TODO: re-add light theme */
+:root {
+    --background: var(--macchiato-background);
+    --crust: var(--macchiato-crust);
+    --mantle: var(--macchiato-mantle);
+    --surface-0: var(--macchiato-surface-0);
+    --surface-1: var(--macchiato-surface-1);
+    --surface-2: var(--macchiato-surface-2);
+    --accent: var(--macchiato-accent);
+    --text: var(--macchiato-text);
 }

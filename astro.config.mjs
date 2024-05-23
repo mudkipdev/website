@@ -6,4 +6,10 @@ export default defineConfig({
     devToolbar: {
         enabled: false
     },
+    markdown: {
+        shikiConfig: {
+            theme: "catppuccin-macchiato"
+            // TODO: light theme
+        }
+    }
 })
