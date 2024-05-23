@@ -9,7 +9,8 @@ const { post } = Astro.props
 const preview = String(await remark()
     .use(strip)
     .process(post.body))
-    .substring(0, 150) + "...";
+    .substring(0, 150)
+    .trim() + "...";
 ---
 <Card
     title={post.data.title}
