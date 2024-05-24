@@ -5,15 +5,15 @@ interface Props {
     url?: string;
 }
 
-const { title, description, url } = Astro.props
+const { title, description, url } = Astro.props;
 ---
 <div class="card">
+    <slot name="before" />
     <h2>{
         url == null
         ? title
         : <a href={url}>{title}</a>
     }</h2>
-
     <p>{description}</p>
     <slot name="after" />
 </div>

@@ -1,20 +1,20 @@
 ---
 import Page from "@layouts/Page.astro";
-import Card from "@components/Card.astro";
-import Cards from "@components/Cards.astro";
+import Card from "@components/cards/Card.astro";
+import Cards from "@components/cards/Cards.astro";
 ---
 <Page title="projects">
     <Cards>
         <Card
             title="website"
             description="My personal website written with Astro and TypeScript."
-            url = "https://github.com/mudkipdev/website"
+            url="https://github.com/mudkipdev/website"
         />
 
         <Card
             title="scnewsbot"
             description="A bot for the r/starcitizen Discord server."
-            url = "https://github.com/mudkipdev/scnewsbot"
+            url="https://github.com/mudkipdev/scnewsbot"
         />
     </Cards>
 </Page>
