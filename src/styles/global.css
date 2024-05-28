@@ -93,3 +93,16 @@ code .line::before {
     content: counter(step);
     counter-increment: step;
 }
+
+details {
+    padding: .6rem 1rem;
+    background: var(--mantle);
+    border-radius: 0.5em;
+    margin: 1em 0;
+}
+
+details summary {
+    margin-left: 0.5em;
+    cursor: pointer;
+    user-select: none;
+}
