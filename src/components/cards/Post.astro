@@ -6,11 +6,15 @@ import { remark } from 'remark'
 import strip from 'strip-markdown'
 
 const { post } = Astro.props
-const preview = String(await remark()
+let preview = String(await remark()
     .use(strip)
-    .process(post.body))
-    .substring(0, 150)
-    .trim() + "...";
+    .process(post.body));
+
+if (preview.length > 150) {
+    preview = preview
+        .substring(0, 150)
+        .trim() + "...";
+}
 ---
 <Card
     title={post.data.title}
