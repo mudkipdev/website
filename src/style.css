@@ -99,6 +99,8 @@ body {
     color: var(--crust);
 }
 
+/* Typography */
+
 h1 {
     font-size: 2em;
     margin: 0;
@@ -127,6 +129,8 @@ nav a {
     margin-right: 1em;
 }
 
+/* Code Blocks */
+
 /* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
 pre {
     background-color: var(--mantle) !important;
@@ -148,6 +152,8 @@ code .line::before {
     counter-increment: step;
 }
 
+/* Details */
+
 details {
     padding: 0.75em 1em;
     background: var(--mantle);
@@ -161,6 +167,17 @@ details summary {
     user-select: none;
 }
 
-details p {
-    margin-left: 0.5em;
+/* Checkboxes */
+
+/* input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--crust);
+    padding: 1em;
+    border-radius: 0.5em;
+    margin: 0;
 }
+
+input[type="checkbox"]:checked {
+    background-color: var(--accent) !important;
+    box-shadow: inset 0 0 0 5px var(--crust);
+} */

@@ -23,4 +23,36 @@ const { Content } = await post.render();
 <Page title={data.title}>
     <Date date={data.date} />
     <Content />
+
+    <div id="options">
+        <input type="checkbox" id="hide-cat">
+        <label for="hide-cat">hide cat</label>
+    </div>
 </Page>
+
+<style>
+    #options {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    label[for="hide-cat"] {
+        position: relative;
+        margin-left: 3px;
+        top: 2px;
+    }
+</style>
+
+<script is:inline>
+    let checkbox = document.querySelector("#hide-cat");
+    let cat = document.querySelector("#oneko");
+
+    checkbox.addEventListener("change", (event) => {
+        if (event.target.checked) {
+            cat.style.visibility = "hidden";
+        } else {
+            cat.style.visibility = "visible";
+        }
+    });
+</script>
