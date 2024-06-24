@@ -11,10 +11,10 @@ const { title } = Astro.props;
             rel="alternate" type="application/rss+xml"
             title="mudkip's blog" href="/rss.xml"
         />
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="theme-color" content="#C6A0F6">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="theme-color" content="#C6A0F6" />
         <slot name="metadata">
             <meta property="og:title" content={title} />
         </slot>
