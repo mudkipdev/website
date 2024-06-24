@@ -1,24 +1,14 @@
 ---
 import Card from "@components/cards/Card.astro";
 import Date from "@components/Date.astro";
+import { stripContent } from "@content/config";
 
-import { remark } from 'remark'
-import strip from 'strip-markdown'
-
-const { post } = Astro.props
-let preview = String(await remark()
-    .use(strip)
-    .process(post.body));
-
-if (preview.length > 150) {
-    preview = preview
-        .substring(0, 150)
-        .trim() + "...";
-}
+const { post } = Astro.props;
+const stripped = await stripContent(post);
 ---
 <Card
     title={post.data.title}
-    description={preview}
+    description={stripped}
     url={"/blog/" + post.slug}
 >
     <Date slot="after" date={post.data.date} />

@@ -1,8 +1,9 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import { stripContent } from "@content/config";
 import Page from "@layouts/Page.astro";
-import Date from '@components/Date.astro';
+import Date from "@components/Date.astro";
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
@@ -19,8 +20,15 @@ export const getStaticPaths = (async () => {
 
 const { post, data } = Astro.props;
 const { Content } = await post.render();
+const stripped = await stripContent(post);
 ---
 <Page title={data.title}>
+    <Fragment slot="metadata">
+        <meta property="og:author" content="mudkip">
+        <meta property="og:title" content={data.title}>
+        <meta property="og:description" content={stripped}>
+    </Fragment>
+
     <Date date={data.date} />
     <Content />
 
