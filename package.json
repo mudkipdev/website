@@ -12,7 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.2",
+    "@astrojs/check": "^0.9.1",
     "@astrojs/rss": "^4.0.7",
     "astro": "^4.12.3",
     "remark": "^15.0.1",
