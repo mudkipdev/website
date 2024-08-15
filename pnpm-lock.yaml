@@ -15,8 +15,8 @@ importers:
         specifier: ^4.0.7
         version: 4.0.7
       astro:
-        specifier: ^4.14.1
-        version: 4.14.1(rollup@4.18.0)(typescript@5.5.4)
+        specifier: ^4.14.2
+        version: 4.14.2(rollup@4.18.0)(typescript@5.5.4)
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -674,8 +674,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@4.14.1:
-    resolution: {integrity: sha512-tLhGE+vHl+n66KgzyV7ek6ro2dqKenHqdxPb/R6x9ci+fKG5lSSOeb/dP/XVhpKUMcuV98IGWTxL5VPzqPFUJQ==}
+  astro@4.14.2:
+    resolution: {integrity: sha512-x9VeYx8Ih6kYKBMVwwsfRzsZVq30+SUhiawnYQ6+46qQnEx3zH05KcH24HsJMe6dVpHD8HdH7CWR5C4o7Q/jeg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2501,7 +2501,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.14.1(rollup@4.18.0)(typescript@5.5.4):
+  astro@4.14.2(rollup@4.18.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.2
       '@astrojs/internal-helpers': 0.4.1
@@ -2566,6 +2566,7 @@ snapshots:
       vitefu: 0.2.5(vite@5.4.0)
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
+      yargs-parser: 21.1.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
       zod-to-ts: 1.2.0(typescript@5.5.4)(zod@3.23.8)
