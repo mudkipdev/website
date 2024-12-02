@@ -1,2 +1,102 @@
 ---
 ---
+<div id="chat">
+    <p>
+        <b>chat</b>
+        <noscript>
+            <span id="noscript">javascript required sorry :(</span>
+        </noscript>
+    </p>
+
+    <ul id="history"></ul>
+    <input type="text" placeholder="send a message..." autofocus>
+</div>
+
+<script>
+    const input = document.querySelector(`#chat input[type="text"]`) as HTMLInputElement;
+    const history = document.querySelector("#history") as HTMLUListElement;
+    const username = "mudkip";
+
+    if (!input || !history) {
+        console.error("could not find chat elements");
+    }
+
+    input.addEventListener("keydown", (event: KeyboardEvent) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const value = input.value.trim();
+
+            if (!value) {
+                return;
+            }
+
+            const element = document.createElement("li");
+
+            const usernameElement = document.createElement("span");
+            usernameElement.textContent = "<" + username + ">";
+            usernameElement.style.color = "var(--ctp-macchiato-green)";
+            usernameElement.style.fontSize = "inherit";
+            element.appendChild(usernameElement);
+
+            const messageElement = document.createTextNode(" " + value);
+            element.appendChild(messageElement);
+
+            history.appendChild(element);
+            input.value = "";
+        }
+    });
+</script>
+
+<style>
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #chat {
+        border: 2px solid var(--surface-3);
+        padding: 1em;
+    }
+
+    #noscript {
+        font-size: inherit;
+        color: var(--ctp-macchiato-red);
+        animation: blink 1.5s infinite;
+    }
+
+    #history {
+        margin: 2em 0;
+        list-style: none;
+        word-wrap: break-word;
+        overflow-y: auto;
+        max-height: 20em;
+    }
+
+    input {
+        padding: 0.5em;
+        box-sizing: border-box;
+        width: 100%;
+
+        font-family: Terminus, monospace;
+        font-size: 1.2em;
+
+        border: none;
+        outline: none;
+
+        background: var(--surface-3);
+        color: var(--text);
+    }
+
+    input::placeholder {
+        color: var(--ctp-macchiato-overlay1);
+    }
+</style>
