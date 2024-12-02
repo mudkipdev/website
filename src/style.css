@@ -35,6 +35,16 @@
     margin: 0;
 }
 
+@media (max-width: 700px) {
+    :root {
+        --background: var(--surface-2);
+    }
+
+    main {
+        padding: 1em !important;
+    }
+}
+
 html, body {
     height: 100%;
 }
