@@ -9,11 +9,11 @@ const { title, description, url } = Astro.props;
 ---
 <div class="card">
     <slot name="before" />
-    <h2>{
-        url == null
-        ? title
-        : <a href={url}>{title}</a>
-    }</h2>
+    <p id="title">
+        <b>
+            {url == null ? title : <a href={url}>{title}</a>}
+        </b>
+    </p>
     <p>{description}</p>
     <slot name="after" />
 </div>
@@ -26,19 +26,14 @@ const { title, description, url } = Astro.props;
 
         padding: 1em;
         background-color: var(--mantle);
-        border-radius: 0.5em;
-    }
-
-    .card * {
-        margin: 0;
+        border: 2px solid var(--surface-3);
     }
 
     .card a {
-        color: var(--text);
+        --color: var(--text);
     }
 
-    .card p {
-        font-size: 0.85em;
+    .card #title {
         margin-bottom: 5px;
     }
 </style>

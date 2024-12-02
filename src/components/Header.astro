@@ -1,30 +1,44 @@
 ---
 ---
 <nav>
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/projects">projects</a>
-    <a href="/blog">blog</a>
+    <a href="/">/home</a>
+    <span class="divider">|</span>
+    <a href="/about">/about</a>
+    <span class="divider">|</span>
+    <a href="/projects">/projects</a>
+    <span class="divider">|</span>
+    <a href="/blog">/blog</a>
 </nav>
 
 <style>
-    a:nth-child(1) {
-        color: #ED8796;
+    nav {
+        display: flex;
+        flex-direction: row;
+        user-select: none;
+        gap: 1em;
     }
 
-    a:nth-child(2) {
-        color: #F5A97F;
+    nav span.divider {
+        color: var(--surface-5);
     }
 
-    a:nth-child(3) {
-        color: #EED49E;
+    nav a:nth-of-type(1) {
+        --color: var(--ctp-macchiato-red);
     }
 
-    a:nth-child(4) {
-        color: #A6DA95;
+    nav a:nth-of-type(2) {
+        --color: var(--ctp-macchiato-peach);
     }
 
-    a:nth-child(5) {
-        color: #8AADF4;
+    nav a:nth-of-type(3) {
+        --color: var(--ctp-macchiato-yellow);
+    }
+
+    nav a:nth-of-type(4) {
+        --color: var(--ctp-macchiato-green);
+    }
+
+    nav a:nth-of-type(5) {
+        --color: var(--ctp-macchiato-blue);
     }
 </style>

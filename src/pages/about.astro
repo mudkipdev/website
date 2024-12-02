@@ -2,5 +2,21 @@
 import Page from "@layouts/Page.astro";
 ---
 <Page title="about">
-    <p>work in progress</p>
+    <p>work in progress<span id="wip">...</span></p>
 </Page>
+
+<script>
+    let element = document.getElementById("wip");
+    let iteration = 3;
+
+    setInterval(() => {
+        if (!element) {
+            return;
+        } else if (iteration > 3) {
+            iteration = 0;
+        }
+
+        element.textContent = ".".repeat(iteration);
+        iteration++;
+    }, 250);
+</script>

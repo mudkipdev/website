@@ -1,183 +1,97 @@
+@import url("https://unpkg.com/@catppuccin/palette/css/catppuccin.css");
+
+@font-face {
+    font-family: Terminus;
+    src: url("/terminus.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Terminus;
+    src: url("/terminus-bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
-    --latte-background: #EFF1F5;
-    --latte-crust: #DCE0E8;
-    --latte-mantle: #E6E9EF;
-    --latte-surface-0: #CCD0DA;
-    --latte-surface-1: #BCC0CC;
-    --latte-surface-2: #ACB0BE;
-    --latte-accent: #8839EF;
-    --latte-text: #4C4F69;
-
-    --frappe-background: #303446;
-    --frappe-crust: #232634;
-    --frappe-mantle: #292C3C;
-    --frappe-surface-0: #414558;
-    --frappe-surface-1: #51576D;
-    --frappe-surface-2: #626880;
-    --frappe-accent: #CA9EE5;
-    --frappe-text: #C6D0F5;
-
-    --macchiato-background: #24273A;
-    --macchiato-crust: #181926;
-    --macchiato-mantle: #1E2030;
-    --macchiato-surface-0: #363A4E;
-    --macchiato-surface-1: #494D64;
-    --macchiato-surface-2: #5B6078;
-    --macchiato-accent: #C6A0F6;
-    --macchiato-text: #CAD3F5;
-
-    --mocha-background: #1E1E2E;
-    --mocha-crust: #11111B;
-    --mocha-mantle: #181825;
-    --mocha-surface-0: #313244;
-    --mocha-surface-1: #444759;
-    --mocha-surface-2: #585B6F;
-    --mocha-accent: #CBA5F7;
-    --mocha-text: #CDD6F3;
-
-    --oled-background: #000000;
-    --oled-crust: #010101;
-    --oled-mantle: #020202;
-    --oled-surface-0: var(--mocha-surface-0);
-    --oled-surface-1: var(--mocha-surface-1);
-    --oled-surface-2: var(--mocha-surface-2);
-    --oled-accent: var(--mocha-accent);
-    --oled-text: var(--mocha-text);
-}
-
-/* TODO: re-add light theme */
-:root {
-    --background: var(--macchiato-background);
-    --crust: var(--macchiato-crust);
-    --mantle: var(--macchiato-mantle);
-    --surface-0: var(--macchiato-surface-0);
-    --surface-1: var(--macchiato-surface-1);
-    --surface-2: var(--macchiato-surface-2);
-    --accent: var(--macchiato-accent);
-    --text: var(--macchiato-text);
-}
-
-body {
-    background-color: var(--background);
-    color: var(--text);
-
-    line-height: 1.65;
-    font-size: 1.5em;
-    font-family: Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen-Sans,
-        Ubuntu,
-        Cantarell,
-        "Helvetica Neue",
-        sans-serif;
-}
-
-body {
-    max-width: 30em;
-    margin: auto;
-    padding: 5em;
-}
-
-@media (max-width: 700px) {
-    body {
-        padding: 1em;
-    }
-}
-
-@media (max-width: 400px) {
-    body {
-        font-size: 1.25em;
-        padding: 1em;
-    }
+    --background: var(--ctp-macchiato-base);
+    --surface-1: var(--ctp-macchiato-crust);
+    --surface-2: var(--ctp-macchiato-mantle);
+    --surface-3: var(--ctp-macchiato-surface0);
+    --surface-4: var(--ctp-macchiato-surface1);
+    --surface-5: var(--ctp-macchiato-surface2);
+    --accent: var(--ctp-macchiato-mauve);
+    --text: var(--ctp-macchiato-text);
 }
 
 ::selection {
-    background-color: var(--accent);
-    color: var(--crust);
+    background: var(--accent);
+    color: var(--surface-1);
 }
 
-/* Typography */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    max-width: 40em;
+
+    font-family: Terminus, monospace;
+    font-size: 1.2em;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+main {
+    flex: 1;
+    padding: 2em 3em;
+    background: var(--surface-2);
+}
 
 h1 {
-    font-size: 2em;
-    margin: 0;
+    font-size: 1.8em;
+    margin: 0.5em 0;
 }
 
 h2 {
     font-size: 1.5em;
-    margin: 0;
+    margin: 0.4em 0;
 }
 
-h3 {
+p, a, li, span {
     font-size: 1.2em;
-    margin: 0;
+}
+
+hr {
+    border: 1px solid var(--surface-3);
+    margin: 1em 0;
 }
 
 a {
-    color: var(--accent);
+    color: var(--color, var(--accent));
     font-weight: bold;
 }
 
 a:hover {
-    filter: brightness(90%);
+    background: var(--color, var(--accent));
+    color: var(--surface-1);
+    text-decoration: none;
 }
 
-nav a {
-    margin-right: 1em;
+ul {
+    margin-top: -0.8em;
 }
-
-/* Code Blocks */
-
-/* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
-pre {
-    background-color: var(--mantle) !important;
-    border-radius: 0.5em;
-    padding: 1em;
-    counter-reset: step;
-    counter-increment: step 0;
+li {
+    margin-left: 1em;
 }
-
-code .line::before {
-    display: inline-block;
-    margin-right: 1.5rem;
-    text-align: right;    
-    color: var(--text);
-    filter: opacity(50%);
-    width: 1rem;
-
-    content: counter(step);
-    counter-increment: step;
-}
-
-/* Details */
-
-details {
-    padding: 0.75em 1em;
-    background: var(--mantle);
-    border-radius: 0.5em;
-    margin: 1em 0;
-}
-
-details summary {
-    margin-left: 0.5em;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Checkboxes */
-
-/* input[type="checkbox"] {
-    appearance: none;
-    background-color: var(--crust);
-    padding: 1em;
-    border-radius: 0.5em;
-    margin: 0;
-}
-
-input[type="checkbox"]:checked {
-    background-color: var(--accent) !important;
-    box-shadow: inset 0 0 0 5px var(--crust);
-} */
