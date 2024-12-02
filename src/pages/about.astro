@@ -12,11 +12,11 @@ import Page from "@layouts/Page.astro";
     setInterval(() => {
         if (!element) {
             return;
-        } else if (iteration > 3) {
+        } else if (iteration > 5) {
             iteration = 0;
         }
 
-        element.textContent = ".".repeat(iteration);
+        element.textContent = ".".repeat(iteration > 3 ? 3 : iteration);
         iteration++;
     }, 250);
 </script>
