@@ -15,7 +15,19 @@
 <script>
     const input = document.querySelector(`#chat input[type="text"]`) as HTMLInputElement;
     const history = document.querySelector("#history") as HTMLUListElement;
+    const colors = [
+        "red",
+        "peach",
+        "yellow",
+        "green",
+        "sky",
+        "blue",
+        "mauve",
+        "pink"
+    ];
+
     const username = "mudkip";
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
     if (!input || !history) {
         console.error("could not find chat elements");
@@ -34,7 +46,7 @@
 
             const usernameElement = document.createElement("span");
             usernameElement.textContent = "<" + username + ">";
-            usernameElement.style.color = "var(--ctp-macchiato-green)";
+            usernameElement.style.color = `var(--ctp-macchiato-${color})`;
             usernameElement.style.fontSize = "inherit";
             element.appendChild(usernameElement);
 
