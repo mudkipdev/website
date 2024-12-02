@@ -33,6 +33,11 @@
         console.error("could not find chat elements");
     }
 
+    let welcomeElement = document.createElement("li");
+    welcomeElement.innerHTML = "<i>welcome to the chat, this isn't a real thing yet</i>";
+    welcomeElement.style.color = "var(--surface-5)";
+    history.appendChild(welcomeElement);
+
     input.addEventListener("keydown", (event: KeyboardEvent) => {
         if (event.key === "Enter") {
             event.preventDefault();
