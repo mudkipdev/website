@@ -95,9 +95,23 @@ a:hover {
     text-decoration: none;
 }
 
-ul {
-    margin-top: -0.8em;
+pre {
+    font-size: 0.8em;
+    background-color: var(--background) !important;
+    margin: 2em 0;
+    padding: 1em;
+    counter-reset: step;
+    counter-increment: step 0;
 }
-li {
-    margin-left: 1em;
+
+code .line::before {
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 1.5em;
+    text-align: right;    
+    color: var(--text);
+    filter: opacity(50%);
+    width: 1em;
+    content: counter(step);
+    counter-increment: step;
 }
