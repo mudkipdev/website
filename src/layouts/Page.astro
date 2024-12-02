@@ -6,12 +6,14 @@ import "../style.css";
 
 interface Props {
     title: string;
+    path?: string;
 }
 
-const { title } = Astro.props;
+const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") } = Astro.props;
 ---
 <html lang="en">
     <head>
+        <title>{path}</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link
         rel="alternate" type="application/rss+xml"
@@ -21,15 +23,13 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="theme-color" content="#C6A0F6" />
-        <slot name="metadata">
-            <title>~/{title === "mudkip" ? "" : title}</title>
-            <meta property="og:title" content={title} />
-        </slot>
+        <meta property="og:title" content={title} />
+        <slot name="metadata" />
     </head>
     <body>
         <main>
-            <slot name="title">
-                <Profile />
+            <slot name="profile">
+                <Profile path={path} />
             </slot>
 
             <Header />
