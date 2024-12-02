@@ -95,6 +95,30 @@ a:hover {
     text-decoration: none;
 }
 
+/* Buttons */
+
+button, a.button {
+    padding: 0.8em 0em;
+    margin-top: 1em;
+    max-width: 10em;
+    border: none;
+    outline: none;
+
+    background: var(--ctp-macchiato-surface0);
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover, a.button:hover {
+    background: var(--ctp-macchiato-surface1);
+}
+
+/* Code Blocks */
+
 pre {
     font-size: 0.8em;
     background-color: var(--background) !important;
