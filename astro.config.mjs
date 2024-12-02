@@ -9,7 +9,6 @@ export default defineConfig({
     markdown: {
         shikiConfig: {
             theme: "catppuccin-macchiato"
-            // TODO: light theme
         }
     }
 })

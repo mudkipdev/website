@@ -1,0 +1,37 @@
+---
+interface Props {
+    path: string;
+}
+
+const { path } = Astro.props;
+---
+<div id="profile">
+    <img src="https://avatars.githubusercontent.com/u/86132148" width="80" height="80">
+    <div id="text">
+        <h1>mudkip</h1>
+        <p>{path}</p>
+    </div>
+</div>
+
+<hr>
+
+<style>
+    #profile {
+        display: flex;
+        flex-direction: row;
+        user-select: none;
+        gap: 1.25em;
+    }
+
+    /* fix all this */
+    #profile #text {
+        margin-top: -1em;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #profile p {
+        margin-top: -0.5em;
+        color: var(--surface-5);
+    }
+</style>

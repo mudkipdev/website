@@ -3,7 +3,6 @@ import type { InferGetStaticPropsType, GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import { stripContent } from "@content/config";
 import Page from "@layouts/Page.astro";
-import Date from "@components/Date.astro";
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
@@ -21,46 +20,13 @@ export const getStaticPaths = (async () => {
 const { post, data } = Astro.props;
 const { Content } = await post.render();
 const stripped = await stripContent(post);
+const path = "~/blog/" + data.title.toLowerCase().replaceAll(" ", "-") + ".txt";
 ---
-<Page title={data.title}>
+<Page title={data.title} path={path}>
     <Fragment slot="metadata">
         <meta property="og:site_name" content="mudkip" />
-        <meta property="og:title" content={data.title} />
         <meta property="og:description" content={stripped} />
     </Fragment>
 
-    <Date date={data.date} />
     <Content />
-
-    <div id="options">
-        <input type="checkbox" id="hide-cat">
-        <label for="hide-cat">hide cat</label>
-    </div>
 </Page>
-
-<style>
-    #options {
-        position: absolute;
-        bottom: 15px;
-        left: 15px;
-    }
-
-    label[for="hide-cat"] {
-        position: relative;
-        margin-left: 3px;
-        top: 2px;
-    }
-</style>
-
-<script is:inline>
-    let checkbox = document.querySelector("#hide-cat");
-    let cat = document.querySelector("#oneko");
-
-    checkbox.addEventListener("change", (event) => {
-        if (event.target.checked) {
-            cat.style.visibility = "hidden";
-        } else {
-            cat.style.visibility = "visible";
-        }
-    });
-</script>
