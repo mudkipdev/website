@@ -16,11 +16,25 @@ const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") } = Astro.
         <title>{path}</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link
-        rel="alternate" type="application/rss+xml"
-        title="mudkip's blog" href="/rss.xml"
+	        rel="alternate" type="application/rss+xml"
+    	    title="mudkip's blog" href="/rss.xml"
         />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+			rel="preload"
+			href="/terminus.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+        />
+        <link
+			rel="preload"
+			href="/terminus-bold.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+        />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="theme-color" content="#C6A0F6" />
         <meta property="og:title" content={title} />
