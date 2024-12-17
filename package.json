@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.10",
-    "astro": "^5.0.8",
+    "astro": "^5.0.9",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
     "typescript": "^5.7.2"
