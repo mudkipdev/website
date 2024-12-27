@@ -1,11 +1,15 @@
 import { defineConfig } from "astro/config";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
     site: "https://mudkip.dev",
-    trailingSlash: "ignore",
+    trailingtSlash: "ignore",
+    
     devToolbar: {
         enabled: false
     },
+    
     markdown: {
         shikiConfig: {
             theme: "catppuccin-macchiato"
