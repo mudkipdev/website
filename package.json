@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/rss": "^4.0.9",
-    "astro": "^4.16.16",
+    "@astrojs/rss": "^4.0.10",
+    "astro": "^4.16.18",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
     "typescript": "^5.7.2"
