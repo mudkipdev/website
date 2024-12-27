@@ -1,10 +1,8 @@
 import { defineConfig } from "astro/config";
 
-import react from "@astrojs/react";
-
 export default defineConfig({
     site: "https://mudkip.dev",
-    trailingtSlash: "ignore",
+    trailingSlash: "ignore",
     
     devToolbar: {
         enabled: false
