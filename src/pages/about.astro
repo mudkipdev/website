@@ -1,42 +1,49 @@
 ---
+import Accordion from "@components/Accordion.astro";
 import Page from "@layouts/Page.astro";
 ---
 <Page title="about">
-    <p><b>backend</b></p>
-    <ul>
-        <li>python</li>
-        <li>java</li>
-        <li>kotlin</li>
-        <li>rust</li>
-    </ul>
+    <Accordion title="fun facts">
+        <ul>
+            <li>I speak English, Russian, and toki pona. I'm also taking Spanish at school and learning Japanese in my free time.</li>
+            <li>I have been to about 40 U.S. states and a handful of countries.</li>
+            <li>I like cats, but I can't keep one because my family is allergic.</li>
+        </ul>
+    </Accordion>
 
-    <br>
-    <p><b>frontend</b></p>
-    <ul>
-        <li>javascript</li>
-        <li>typescript</li>
-        <li>astro</li>
-    </ul>
+    <Accordion title="tech stack">
+        <ul>
+            <li><b>backend:</b> python, java, kotlin, rust</li>
+            <li><b>frontend:</b> javascript, typescript, astro</li>
+            <li><b>databases:</b> postgres, mongodb, sqlite</li>
+            <li><b>misc:</b> bash, docker, lua, nix</li>
+        </ul>
+    </Accordion>
 
-    <br>
-    <p><b>databases</b></p>
-    <ul>
-        <li>postgres</li>
-        <li>mongodb</li>
-        <li>sqlite</li>
-    </ul>
-
-    <br>
-    <p><b>linux</b></p>
-    <ul>
-        <li>bash</li>
-        <li>docker</li>
-        <li>nix</li>
-    </ul>
+    <Accordion title="pc specs">
+        <ul>
+            <li><b>cpu:</b> Ryzen 5 3600</li>
+            <li><b>gpu:</b> Radeon RX 6800</li>
+            <li><b>ram:</b> 32 GB (DDR4, 3600 MHz)</li>
+            <li><b>storage: </b>1.7 TB (combined) SSDs, 2 TB HDD</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>
+                <b>laptop:</b>
+                MacBook Air M2 (2022)
+                <ul>
+                    <li><b>ram:</b> 16 GB</li>
+                    <li><b>storage:</b> 512 GB</li>
+                </ul>
+            </li>
+            <li><b>phone:</b> iPhone 14</li>
+        </ul>
+    </Accordion>
 </Page>
 
 <style>
     li {
-        margin-left: 1em;
+        margin-left: 1.2em;
     }
 </style>

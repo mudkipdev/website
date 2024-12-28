@@ -1,0 +1,32 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<details>
+    <summary>{title}</summary>
+    <slot />
+</details>
+
+<style>
+    details {
+        margin: 0.75em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 1em;
+        border: 2px solid var(--surface-3);
+    }
+
+    details summary {
+        user-select: none;
+        font-size: 1.2em;
+    }
+
+    details[open] summary {
+        margin-bottom: 0.5em;
+    }
+</style>
