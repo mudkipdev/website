@@ -1,11 +1,12 @@
 ---
 interface Props {
     title: string;
+    name?: string;
 }
 
-const { title } = Astro.props;
+const { title, name } = Astro.props;
 ---
-<details>
+<details name={name}>
     <summary>{title}</summary>
     <slot />
 </details>

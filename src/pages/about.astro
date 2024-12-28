@@ -3,7 +3,7 @@ import Accordion from "@components/Accordion.astro";
 import Page from "@layouts/Page.astro";
 ---
 <Page title="about">
-    <Accordion title="fun facts">
+    <Accordion title="fun facts" name="about">
         <ul>
             <li>I speak English, Russian, and toki pona. I'm also taking Spanish at school and learning Japanese in my free time.</li>
             <li>I have been to about 40 U.S. states and a handful of countries.</li>
@@ -11,7 +11,7 @@ import Page from "@layouts/Page.astro";
         </ul>
     </Accordion>
 
-    <Accordion title="tech stack">
+    <Accordion title="tech stack" name="about">
         <ul>
             <li><b>backend:</b> python, java, kotlin, rust</li>
             <li><b>frontend:</b> javascript, typescript, astro</li>
@@ -20,7 +20,7 @@ import Page from "@layouts/Page.astro";
         </ul>
     </Accordion>
 
-    <Accordion title="pc specs">
+    <Accordion title="pc specs" name="about">
         <ul>
             <li><b>cpu:</b> Ryzen 5 3600</li>
             <li><b>gpu:</b> Radeon RX 6800</li>
