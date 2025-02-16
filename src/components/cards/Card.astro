@@ -5,7 +5,7 @@ interface Props {
     url?: string;
 }
 
-const { title, description, url } = Astro.props;
+const { title, description, url = "" } = Astro.props;
 ---
 <div class="card">
     <slot name="before" />

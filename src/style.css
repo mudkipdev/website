@@ -75,7 +75,7 @@ h1 {
     margin: 0.5em 0;
 }
 
-p, a, li, span {
+p, nav a, .card a, li, span {
     font-size: 1.2em;
 }
 
@@ -132,7 +132,7 @@ code .line::before {
     font-size: 1em;
     display: inline-block;
     margin-right: 1.5em;
-    text-align: right;    
+    text-align: right;
     color: var(--text);
     filter: opacity(50%);
     width: 1em;
