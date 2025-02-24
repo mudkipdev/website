@@ -68,7 +68,7 @@ h1 {
     margin: 0.5em 0;
 }
 
-p, a, li, span {
+p, a, li, span, time {
     font-size: 1.2em;
 }
 
@@ -108,27 +108,4 @@ button, a.button {
 
 button:hover, a.button:hover {
     background: var(--ctp-macchiato-surface1);
-}
-
-/* Code Blocks */
-
-pre {
-    font-size: 0.8em;
-    background-color: var(--background) !important;
-    margin: 2em 0;
-    padding: 1em;
-    counter-reset: step;
-    counter-increment: step 0;
-}
-
-code .line::before {
-    font-size: 1em;
-    display: inline-block;
-    margin-right: 1.5em;
-    text-align: right;
-    color: var(--text);
-    filter: opacity(50%);
-    width: 1em;
-    content: counter(step);
-    counter-increment: step;
 }
