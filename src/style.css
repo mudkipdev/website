@@ -8,13 +8,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: Terminus;
-    src: url("/terminus-bold.ttf");
-    font-weight: 700;
-    font-style: normal;
-}
-
 :root {
     --background: var(--ctp-macchiato-base);
     --surface-1: var(--ctp-macchiato-crust);
@@ -75,7 +68,7 @@ h1 {
     margin: 0.5em 0;
 }
 
-p, nav a, .card a, li, span {
+p, a, li, span {
     font-size: 1.2em;
 }
 
@@ -86,10 +79,10 @@ hr {
 
 a {
     color: var(--color, var(--accent));
-    font-weight: bold;
+    font-weight: 700;
 }
 
-a:hover {
+a:not(.badge):hover {
     background: var(--color, var(--accent));
     color: var(--surface-1);
     text-decoration: none;

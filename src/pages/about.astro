@@ -3,6 +3,10 @@ import Accordion from "@components/Accordion.astro";
 import Page from "@layouts/Page.astro";
 ---
 <Page title="about">
+    <Accordion title="friends" name="about">
+        <a href="https://goldenstack.net" class="badge"><img src="/buttons/golden.png"></a>
+    </Accordion>
+
     <Accordion title="fun facts" name="about">
         <ul>
             <li>I speak English, Russian, and toki pona. I'm also taking Spanish at school and learning Japanese in my free time.</li>
@@ -39,5 +43,15 @@ import Page from "@layouts/Page.astro";
 <style>
     li {
         margin-left: 1.2em;
+    }
+
+    .badge {
+        width: 88px;
+        height: 31px;
+        image-rendering: pixelated;
+    }
+
+    .badge:hover {
+        filter: brightness(80%);
     }
 </style>
