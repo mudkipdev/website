@@ -1,7 +1,8 @@
 {
     "files.exclude": {
-        "node_modules": true,
         ".astro": true,
-        "dist": true
+        ".wrangler": true,
+        "dist": true,
+        "node_modules": true
     }
 }
