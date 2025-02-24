@@ -1,28 +1,35 @@
 ---
-const apiKey: string = import.meta.env.WAKATIME_API_KEY;
 const endpoint = "https://wakatime.com/api/v1/users/current/stats/last_7_days";
+const apiKey: string = import.meta.env.WAKATIME_API_KEY;
+let data = undefined;
 
-const response = await fetch(endpoint, {
-    method: "GET",
-    headers: {
-        "User-Agent": "https://mudkip.dev",
-        "Authorization": `Basic ${btoa(apiKey)}`,
-        "Content-Type": "application/json"
-    }
-})
+if (apiKey != undefined) {
+    const response = await fetch(endpoint, {
+        method: "GET",
+        headers: {
+            "User-Agent": "https://mudkip.dev",
+            "Authorization": `Basic ${btoa(apiKey)}`,
+            "Content-Type": "application/json"
+        }
+    })
 
-const data = (await response.json())["data"];
+    data = (await response.json())["data"];
+}
 ---
 
 <center>
     <div class="stats">
         <img src="/assets/computer.png" width="64" height="64">
 
-        <div class="inner">
+        <div>
             <p><b>coding stats</b></p>
             <hr>
-            <p><b>this week: </b>{data["human_readable_total"]}</p>
-            <p><b>daily average: </b>{data["human_readable_daily_average"]}</p>
+            {
+                data ?
+                <p><b>this week: </b>{data["human_readable_total"]}</p>
+                <p><b>daily average: </b>{data["human_readable_daily_average"]}</p>
+                : <span class="error">failed to fetch data!</span>
+            }
         </div>
     </div>
 </center>
@@ -32,10 +39,10 @@ const data = (await response.json())["data"];
         display: flex;
         align-items: center;
         text-align: left;
-        gap: 1em;
+        gap: 1.5em;
 
         max-width: fit-content;
         border: 2px solid var(--surface-3);
-        padding: 1em;
+        padding: 1.5em;
     }
 </style>

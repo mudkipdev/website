@@ -4,7 +4,7 @@
     <p>
         <b>chat</b>
         <noscript>
-            <span id="noscript">javascript required sorry :(</span>
+            <span class="error">javascript required sorry :(</span>
         </noscript>
     </p>
 
@@ -66,29 +66,9 @@
 </script>
 
 <style>
-    @keyframes blink {
-        0% {
-            opacity: 1;
-        }
-
-        50% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
     #chat {
         border: 2px solid var(--surface-3);
         padding: 1em;
-    }
-
-    #noscript {
-        font-size: inherit;
-        color: var(--ctp-macchiato-red);
-        animation: blink 1.5s infinite;
     }
 
     #history {
@@ -118,5 +98,9 @@
 
     input::placeholder {
         color: var(--ctp-macchiato-overlay1);
+    }
+
+    .error {
+        font-size: inherit;
     }
 </style>

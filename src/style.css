@@ -109,3 +109,22 @@ button, a.button {
 button:hover, a.button:hover {
     background: var(--ctp-macchiato-surface1);
 }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.error {
+    color: var(--ctp-macchiato-red);
+    animation: blink 1.5s infinite;
+}
