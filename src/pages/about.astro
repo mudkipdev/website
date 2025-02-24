@@ -1,57 +1,13 @@
 ---
-import Accordion from "@components/Accordion.astro";
+import Friends from "@components/about/Friends.astro";
+import FunFacts from "@components/about/FunFacts.astro";
+import PcSpecs from "@components/about/PcSpecs.astro";
+import TechStack from "@components/about/TechStack.astro";
 import Page from "@layouts/Page.astro";
 ---
 <Page title="about">
-    <Accordion title="friends" name="about">
-        <a href="https://goldenstack.net" class="badge"><img src="/buttons/golden.png"></a>
-    </Accordion>
-
-    <Accordion title="fun facts" name="about">
-        <ul>
-            <li>I speak English, Russian, and toki pona. I'm also taking Spanish at school and learning Japanese in my free time.</li>
-            <li>I have been to about 40 U.S. states and a handful of countries.</li>
-            <li>I like cats, but I can't keep one because my family is allergic.</li>
-        </ul>
-    </Accordion>
-
-    <Accordion title="tech stack" name="about">
-        <ul>
-            <li><b>backend:</b> python, java, kotlin, rust</li>
-            <li><b>frontend:</b> javascript, typescript, astro</li>
-            <li><b>databases:</b> postgres, mongodb, sqlite</li>
-            <li><b>misc:</b> bash, docker, lua, nix</li>
-        </ul>
-    </Accordion>
-
-    <Accordion title="pc specs" name="about">
-        <ul>
-            <li><b>cpu:</b> Ryzen 5 3600</li>
-            <li><b>gpu:</b> Radeon RX 6800</li>
-            <li><b>ram:</b> 32 GB (DDR4, 3600 MHz)</li>
-            <li><b>storage: </b>1.7 TB (combined) SSDs, 2 TB HDD</li>
-        </ul>
-        <hr>
-        <ul>
-            <li><b>laptop:</b> MacBook Air M2</li>
-            <li><b>laptop:</b> ThinkPad T480S</li>
-            <li><b>phone:</b> iPhone 14</li>
-        </ul>
-    </Accordion>
+    <FunFacts />
+    <TechStack />
+    <PcSpecs />
+    <Friends />
 </Page>
-
-<style>
-    li {
-        margin-left: 1.2em;
-    }
-
-    .badge {
-        width: 88px;
-        height: 31px;
-        image-rendering: pixelated;
-    }
-
-    .badge:hover {
-        filter: brightness(80%);
-    }
-</style>
