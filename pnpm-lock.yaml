@@ -13,13 +13,13 @@ importers:
         version: 0.9.4(typescript@5.7.3)
       '@astrojs/cloudflare':
         specifier: ^12.2.3
-        version: 12.2.3(astro@5.4.0(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0))(yaml@2.5.0)
+        version: 12.2.3(astro@5.4.1(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0))(yaml@2.5.0)
       '@astrojs/rss':
         specifier: ^4.0.11
         version: 4.0.11
       astro:
-        specifier: ^5.4.0
-        version: 5.4.0(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0)
+        specifier: ^5.4.1
+        version: 5.4.1(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0)
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -45,6 +45,9 @@ packages:
 
   '@astrojs/compiler@2.10.3':
     resolution: {integrity: sha512-bL/O7YBxsFt55YHU021oL+xz+B/9HvGNId3F9xURN16aeqDK9juHGktdkCSXz+U4nqFACq6ZFvWomOzhV+zfPw==}
+
+  '@astrojs/compiler@2.10.4':
+    resolution: {integrity: sha512-86B3QGagP99MvSNwuJGiYSBHnh8nLvm2Q1IFI15wIUJJsPeQTO3eb2uwBmrqRsXykeR/mBzH8XCgz5AAt1BJrQ==}
 
   '@astrojs/internal-helpers@0.6.0':
     resolution: {integrity: sha512-XgHIJDQaGlFnTr0sDp1PiJrtqsWzbHP2qkTU+JpQ8SnBewKP2IKOe/wqCkl0CyfyRXRu3TSWu4t/cpYMVfuBNA==}
@@ -818,8 +821,8 @@ packages:
   as-table@1.0.55:
     resolution: {integrity: sha512-xvsWESUJn0JN421Xb9MQw6AsMHRCUknCe0Wjlxvjud80mU4E6hQf1A6NzQKcYNmYw62MfzEtXc+badstZP3JpQ==}
 
-  astro@5.4.0:
-    resolution: {integrity: sha512-7A//zrCtJUGfJcQAt6PDhMu4a6pogvnK54HLXnYlPnKSWQZu/tKIYWfyvocVnTuEYIPExIN3CpjNAFFLoweJVw==}
+  astro@5.4.1:
+    resolution: {integrity: sha512-z9BiBz8pV7pZVn1evZv/9bJil3A9UZNyEjDFH3IjD87ioz95HHGLgbjRbbqF1EwSy8JOLKlMNyuQPqjrX8xqWw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2176,12 +2179,12 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.2.3(astro@5.4.0(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0))(yaml@2.5.0)':
+  '@astrojs/cloudflare@12.2.3(astro@5.4.1(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0))(yaml@2.5.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.0
       '@astrojs/underscore-redirects': 0.6.0
       '@cloudflare/workers-types': 4.20250214.0
-      astro: 5.4.0(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0)
+      astro: 5.4.1(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0)
       esbuild: 0.25.0
       estree-walker: 3.0.3
       magic-string: 0.30.17
@@ -2205,6 +2208,8 @@ snapshots:
       - yaml
 
   '@astrojs/compiler@2.10.3': {}
+
+  '@astrojs/compiler@2.10.4': {}
 
   '@astrojs/internal-helpers@0.6.0': {}
 
@@ -2821,9 +2826,9 @@ snapshots:
     dependencies:
       printable-characters: 1.0.42
 
-  astro@5.4.0(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0):
+  astro@5.4.1(rollup@4.34.8)(typescript@5.7.3)(yaml@2.5.0):
     dependencies:
-      '@astrojs/compiler': 2.10.3
+      '@astrojs/compiler': 2.10.4
       '@astrojs/internal-helpers': 0.6.0
       '@astrojs/markdown-remark': 6.2.0
       '@astrojs/telemetry': 3.2.0
