@@ -14,6 +14,11 @@ export default defineConfig({
     },
     output: "server",
     adapter: cloudflare({
-        imageService: "passthrough"
-    })
+        imageService: "passthrough",
+    }),
+    vite: {
+        define: {
+            "process.env.API_KEY": JSON.stringify(process.env.API_KEY)
+        }
+    }
 })
