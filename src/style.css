@@ -1,4 +1,3 @@
-/* @import url("https://unpkg.com/@catppuccin/palette/css/catppuccin.css"); */
 @import "catppuccin.css";
 
 @font-face {
@@ -97,7 +96,7 @@ button, a.button {
     border: none;
     outline: none;
 
-    background: var(--ctp-macchiato-surface0);
+    background: var(--surface-3);
     color: var(--text);
 
     font-family: inherit;
@@ -107,7 +106,7 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-    background: var(--ctp-macchiato-surface1);
+    background: var(--surface-4);
 }
 
 @keyframes blink {
