@@ -1,7 +1,7 @@
 ---
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Profile from "@components/Profile.astro";
+import Navigation from "@components/layout/Navigation.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
 import "../style.css";
 
 interface Props {
@@ -35,11 +35,11 @@ const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") } = Astro.
     </head>
     <body>
         <main>
-            <slot name="profile">
-                <Profile path={path} />
+            <slot name="header">
+                <Header path={path} />
             </slot>
 
-            <Header />
+            <Navigation />
             <hr>
             <slot />
             <hr>
