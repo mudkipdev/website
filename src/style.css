@@ -89,7 +89,7 @@ a:not(.badge):not(.button):hover {
 /* Buttons */
 
 button, a.button {
-    padding: 0.2em 0.6em;
+    padding: 0.3em 0.7em;
     max-width: 10em;
     border: none;
     outline: none;
@@ -102,13 +102,19 @@ button, a.button {
     text-align: center;
     text-decoration: none;
 
-    border-width: 2px;
-    border-style: outset;
-    border-color: var(--surface-4);
+    box-shadow:
+        inset 2px 2px var(--surface-5),
+        inset -2px -2px var(--surface-1);
 }
 
-button:hover, a.button:hover {
-    filter: brightness(130%);
+button:not(:disabled):hover, a.button:not(:disabled):hover {
+    filter: brightness(125%);
+}
+
+button:not(:disabled):active, a.button:not(:disabled):active {
+    box-shadow:
+        inset 2px 2px var(--surface-1),
+        inset -2px -2px var(--surface-5);
 }
 
 @keyframes blink {
