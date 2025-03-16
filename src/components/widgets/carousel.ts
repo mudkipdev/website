@@ -5,6 +5,11 @@ const right = document.querySelector("#right")!;
 
 let index = 0;
 
+function playClickSound() {
+    const audio = new Audio("/sounds/click.wav");
+    audio.play();
+}
+
 function updateWidgets() {
     widgets.forEach((widget, localIndex) => {
         widget.style.display = index == localIndex ? "flex" : "none";
@@ -13,11 +18,13 @@ function updateWidgets() {
 
 left.addEventListener("click", () => {
     index = (index == 0) ? widgets.length - 1 : index - 1;
+    playClickSound();
     updateWidgets();
 });
 
 right.addEventListener("click", () => {
     index = (index == widgets.length - 1) ? 0 : index + 1;
+    playClickSound();
     updateWidgets();
 });
 
