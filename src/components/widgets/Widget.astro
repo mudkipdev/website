@@ -1,0 +1,40 @@
+---
+interface Props {
+    title: string;
+    icon: string;
+}
+
+const { title, icon } = Astro.props;
+---
+
+<div class="widget">
+    <img src={icon} width="64" height="64">
+
+    <div class="content">
+        <p><b>{title}</b></p>
+        <hr>
+        <slot />
+    </div>
+</div>
+
+<style>
+    .widget {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 1.5em;
+        gap: 1.5em;
+        border: 2px solid var(--surface-3);
+        width: 25em;
+    }
+
+    .widget img {
+        user-select: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: inherit;
+    }
+</style>

@@ -127,3 +127,32 @@ button:hover, a.button:hover {
     color: var(--ctp-macchiato-red);
     animation: blink 1.5s infinite;
 }
+
+[data-tooltip]:focus, [data-tooltip]:hover {
+    position: relative;
+}
+
+[data-tooltip]:focus::after, [data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    word-wrap: break-word;
+    z-index: 999;
+
+    /* Position */
+    position: absolute;
+    transform: translateX(-50%) translateY(100%);
+    width: max-content;
+    max-width: 30vw;
+    padding: 14px;
+    bottom: -5px;
+    left: 50%;
+
+    /* Style */
+    background: var(--surface-1);
+    border: 2px solid var(--surface-3);
+    color: var(--text);
+    pointer-events: none;
+}
+
+:root:has([data-tooltip]:hover) [data-tooltip]:focus {
+    display: none !important;
+}

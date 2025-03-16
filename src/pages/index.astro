@@ -1,6 +1,6 @@
 ---
-import CodingStats from "@components/CodingStats.astro";
 import Page from "@layouts/Page.astro";
+import Carousel from "@components/widgets/Carousel.astro";
 
 const bio = "I'm a software developer and security researcher, my interests include programming, video games, and music.";
 ---
@@ -13,6 +13,5 @@ const bio = "I'm a software developer and security researcher, my interests incl
 
     <p>{bio}</p>
     <span style="color: var(--surface-5)">(I also use NixOS btw)</span>
-    <div style="margin: 1em 0"></div>
-    <CodingStats />
+    <Carousel />
 </Page>

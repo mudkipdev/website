@@ -1,0 +1,42 @@
+---
+import Widget from "@components/widgets/Widget.astro";
+---
+<div class="container">
+    <span id="left">←</span>
+
+    <Widget title="coding" icon="/images/computer.png">
+        <div id="coding-data"></div>
+    </Widget>
+
+    <Widget title="listening to" icon="/images/music.png">
+        <div id="music-data"></div>
+    </Widget>
+
+    <span id="right">→</span>
+</div>
+
+<script>
+    import "./carousel";
+    import "./dataFetcher";
+</script>
+
+<style>
+    .container {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        margin-top: 1em;
+        gap: 1.25em;
+    }
+
+    #left, #right {
+        user-select: none;
+        color: var(--surface-5);
+        font-size: 3em;
+    }
+
+    #left:hover, #right:hover {
+        color: var(--text);
+        cursor: pointer;
+    }
+</style>
