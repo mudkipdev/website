@@ -1,4 +1,4 @@
-import { fetchCodingData } from "./data";
+import { fetchCodingData } from "./dataFetcher";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedCodingData: any = null;

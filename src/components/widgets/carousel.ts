@@ -7,7 +7,6 @@ let index = 0;
 
 function updateWidgets() {
     widgets.forEach((widget, localIndex) => {
-        console.log(localIndex);
         widget.style.display = index == localIndex ? "flex" : "none";
     });
 }

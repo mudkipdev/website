@@ -1,4 +1,4 @@
-import { fetchMusicData } from "./data";
+import { fetchMusicData } from "./dataFetcher";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedMusicData: any = null;

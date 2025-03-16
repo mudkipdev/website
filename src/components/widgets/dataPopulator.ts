@@ -26,19 +26,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         codingElement.innerHTML = `
             <p>
                 <b>this week: </b>${codingData.weeklyTotal}
+                <br>
                 <b>daily average: </b>${codingData.dailyAverage}
             </p>
         `;
     } else {
-        codingElement.innerHTML = `<span class="error">Failed to fetch data!</span>`;
+        codingElement.innerHTML = `<span class="error">failed to fetch data!</span>`;
     }
 
     if (musicData) {
+        const style = musicData.time == null
+            ? "color: var(--surface-5); animation: blink 1.5s infinite"
+            : "color: var(--surface-5)";
+
         musicElement.innerHTML = `
             <p>${musicData.artist} - ${musicData.track}</p>
-            <p style="color: var(--surface-5)">${timeAgo(musicData.time)}</p>
-        `;
+            <p style="${style}">${musicData.time ? timeAgo(musicData.time) : "now playing"}</p>`;
     } else {
-        musicElement.innerHTML = `<span class="error">Failed to fetch data!</span>`;
+        musicElement.innerHTML = `<span class="error">failed to fetch data!</span>`;
     }
 });

@@ -12,7 +12,7 @@ interface CodingData {
 interface MusicData {
     track: string;
     artist: string;
-    time: number;
+    time: number | null;
 }
 
 async function fetchCodingData(): Promise<CodingData | null> {
@@ -77,7 +77,7 @@ async function fetchMusicData(): Promise<MusicData | null> {
         return {
             track: trackData.name,
             artist: trackData.artist["#text"],
-            time: trackData.date.uts
+            time: trackData.date ? trackData.date.uts : null
         };
     } catch (error) {
         console.error("Failed to fetch Last.fm data:", error);
