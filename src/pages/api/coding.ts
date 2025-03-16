@@ -1,12 +1,13 @@
 import type { APIContext } from "astro";
 import { fetchCodingData } from "./dataFetcher";
+import { getVariable } from "./environment";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedCodingData: any = null;
 let lastFetchTime = 0;
 
 export async function GET(context: APIContext) {
-    const apiKey = context.locals.runtime.WAKATIME_API_KEY || import.meta.env.WAKATIME_API_KEY;
+    const apiKey = getVariable(context, "WAKATIME_API_KEY");
     const currentTime = Date.now();
 
     if (!apiKey) {

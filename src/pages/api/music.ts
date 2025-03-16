@@ -1,13 +1,14 @@
 import type { APIContext } from "astro";
 import { fetchMusicData } from "./dataFetcher";
+import { getVariable } from "./environment";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedMusicData: any = null;
 let lastFetchTime = 0;
 
 export async function GET(context: APIContext) {
-    const apiKey = context.locals.runtime.LASTFM_API_KEY || import.meta.env.LASTFM_API_KEY;
-    const username = context.locals.runtime.LASTFM_USERNAME || import.meta.env.LASTFM_USERNAME;
+    const apiKey = getVariable(context, "LASTFM_API_KEY");
+    const username = getVariable(context, "LASTFM_USERNAME");
     const currentTime = Date.now();
 
     if (!apiKey || !username) {
