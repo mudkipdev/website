@@ -1,6 +1,6 @@
 import type { APIContext } from "astro";
 import { fetchMusicData } from "./dataFetcher";
-import { getVariable } from "./environment";
+import { getVariable } from "src/common";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedMusicData: any = null;

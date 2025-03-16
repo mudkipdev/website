@@ -1,6 +1,6 @@
 import type { APIContext } from "astro";
 import { fetchCodingData } from "./dataFetcher";
-import { getVariable } from "./environment";
+import { getVariable } from "src/common";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedCodingData: any = null;

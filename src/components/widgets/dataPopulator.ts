@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const codingElement = document.querySelector("#coding-data")!;
     const musicElement = document.querySelector("#music-data")!;
 
-    if (codingData) {
+    if (codingData != null && !("error" in codingData)) {
         codingElement.innerHTML = `
             <p>
                 <b>this week: </b>${codingData.weeklyTotal}
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         codingElement.innerHTML = `<span class="error">failed to fetch data!</span>`;
     }
 
-    if (musicData) {
+    if (musicData != null && !("error" in musicData)) {
         const style = musicData.time == null
             ? "color: var(--surface-5); animation: blink 1.5s infinite"
             : "color: var(--surface-5)";
