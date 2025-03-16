@@ -101,6 +101,10 @@ button, a.button {
     font-size: inherit;
     text-align: center;
     text-decoration: none;
+
+    border-width: 2px;
+    border-style: outset;
+    border-color: var(--surface-4);
 }
 
 button:hover, a.button:hover {
