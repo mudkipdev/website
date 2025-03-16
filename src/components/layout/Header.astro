@@ -1,15 +1,16 @@
 ---
-interface Props {
-    path: string;
-}
-
-const { path } = Astro.props;
 ---
 <div id="profile">
     <img src="https://avatars.githubusercontent.com/u/86132148" width="80" height="80">
+
     <div id="text">
         <h1>mudkip</h1>
-        <p>{path}</p>
+
+        <div id="links">
+            <a href="https://bsky.app/profile/mudkip.dev" class="button" target="_blank">bluesky</a>
+            <a href="https://github.com/mudkipdev" class="button" target="_blank">github</a>
+            <a href="mailto:mudkip@mudkip.dev" class="button">email</a>
+        </div>
     </div>
 </div>
 
@@ -23,15 +24,15 @@ const { path } = Astro.props;
         gap: 1.25em;
     }
 
-    /* fix all this */
     #profile #text {
-        margin-top: -1em;
+        display: flex;
         flex-direction: column;
-        gap: 0;
+        gap: 0.5em;
     }
 
-    #profile p {
-        margin-top: -0.5em;
-        color: var(--ctp-macchiato-overlay2);
+    #profile #text #links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
     }
 </style>

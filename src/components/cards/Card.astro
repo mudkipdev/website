@@ -10,9 +10,7 @@ const { title, description, url = "" } = Astro.props;
 <div class="card">
     <slot name="before" />
     <p id="title">
-        <b>
-            {url == null ? title : <a href={url}>{title}</a>}
-        </b>
+        <b>{url == null ? title : <a href={url}>{title}</a>}</b>
     </p>
     <p>{description}</p>
     <slot name="after" />

@@ -3,7 +3,7 @@ const widgets: HTMLElement[] = Array.from(container.querySelectorAll(".widget"))
 const left = document.querySelector("#left")!;
 const right = document.querySelector("#right")!;
 
-let index = 0;
+let index = Math.floor(Math.random() * widgets.length);
 
 function playClickSound() {
     const audio = new Audio("/sounds/click.wav");

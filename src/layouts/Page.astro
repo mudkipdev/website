@@ -35,15 +35,10 @@ const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") } = Astro.
     </head>
     <body>
         <main>
-            <slot name="header">
-                <Header path={path} />
-            </slot>
-
-            <Navigation />
-            <hr>
-            <slot />
-            <hr>
-            <Footer />
+            <slot name="header"><Header /></slot>
+            <slot name="navigation"><Navigation /></slot>
+            <hr><slot /><hr>
+            <slot name="footer"><Footer /></slot>
         </main>
     </body>
 </html>

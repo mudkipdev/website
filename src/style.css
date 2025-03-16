@@ -64,7 +64,6 @@ main {
 
 h1 {
     font-size: 1.8em;
-    margin: 0.5em 0;
 }
 
 p, a, li, span, time {
@@ -76,12 +75,12 @@ hr {
     margin: 1em 0;
 }
 
-a {
+a:not(.button) {
     color: var(--color, var(--accent));
     font-weight: 700;
 }
 
-a:not(.badge):hover {
+a:not(.badge):not(.button):hover {
     background: var(--color, var(--accent));
     color: var(--surface-1);
     text-decoration: none;
@@ -90,8 +89,7 @@ a:not(.badge):hover {
 /* Buttons */
 
 button, a.button {
-    padding: 0.8em 0em;
-    margin-top: 1em;
+    padding: 0.2em 0.6em;
     max-width: 10em;
     border: none;
     outline: none;
@@ -106,7 +104,7 @@ button, a.button {
 }
 
 button:hover, a.button:hover {
-    background: var(--surface-4);
+    filter: brightness(130%);
 }
 
 @keyframes blink {
