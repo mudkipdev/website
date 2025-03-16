@@ -1,8 +1,5 @@
 const WAKATIME_ENDPOINT = "https://wakatime.com/api/v1/users/current/stats/last_7_days";
-const WAKATIME_API_KEY: string = import.meta.env.WAKATIME_API_KEY;
-const LASTFM_API_KEY: string = import.meta.env.LASTFM_API_KEY;
-const LASTFM_USERNAME: string = import.meta.env.LASTFM_USERNAME;
-const LASTFM_ENDPOINT = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USERNAME}&api_key=${LASTFM_API_KEY}&format=json`;
+const LASTFM_ENDPOINT = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user={username}&api_key={apiKey}&format=json`;
 
 interface CodingData {
     weeklyTotal: string;
@@ -15,18 +12,13 @@ interface MusicData {
     time: number | null;
 }
 
-async function fetchCodingData(): Promise<CodingData | null> {
-    if (!WAKATIME_API_KEY) {
-        console.error("WAKATIME_API_KEY is missing");
-        return null;
-    }
-
+async function fetchCodingData(apiKey: string): Promise<CodingData | null> {
     try {
         const response = await fetch(WAKATIME_ENDPOINT, {
             method: "GET",
             headers: {
                 "User-Agent": "https://mudkip.dev",
-                "Authorization": `Basic ${btoa(WAKATIME_API_KEY)}`,
+                "Authorization": `Basic ${btoa(apiKey)}`,
                 "Content-Type": "application/json"
             }
         });
@@ -47,14 +39,13 @@ async function fetchCodingData(): Promise<CodingData | null> {
     }
 }
 
-async function fetchMusicData(): Promise<MusicData | null> {
-    if (!LASTFM_API_KEY || !LASTFM_USERNAME) {
-        console.error("LASTFM_API_KEY or LASTFM_USERNAME is missing");
-        return null;
-    }
-
+async function fetchMusicData(apiKey: string, username: string): Promise<MusicData | null> {
     try {
-        const response = await fetch(LASTFM_ENDPOINT, {
+        const endpoint = LASTFM_ENDPOINT
+            .replace("{username}", username)
+            .replace("{apiKey}", apiKey);
+
+        const response = await fetch(endpoint, {
             method: "GET",
             headers: {
                 "User-Agent": "https://mudkip.dev",

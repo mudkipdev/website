@@ -1,11 +1,21 @@
+import type { APIContext } from "astro";
 import { fetchMusicData } from "./dataFetcher";
 
 const CACHE_EXPIRY = 1000 * 60 * 5;
 let cachedMusicData: any = null;
 let lastFetchTime = 0;
 
-export async function GET() {
+export async function GET(context: APIContext) {
+    const apiKey = context.locals.runtime.LASTFM_API_KEY || import.meta.env.LASTFM_API_KEY;
+    const username = context.locals.runtime.LASTFM_USERNAME || import.meta.env.LASTFM_USERNAME;
     const currentTime = Date.now();
+
+    if (!apiKey || !username) {
+        return new Response(
+            JSON.stringify({ error: "LASTFM_API_KEY or LASTFM_USERNAME is missing!" }),
+            { status: 500, headers: { "Content-Type": "application/json" } }
+        );
+    }
 
     if (cachedMusicData && (currentTime - lastFetchTime) < CACHE_EXPIRY) {
         return new Response(JSON.stringify(cachedMusicData), {
@@ -14,7 +24,7 @@ export async function GET() {
     }
 
     try {
-        const musicData = await fetchMusicData();
+        const musicData = await fetchMusicData(apiKey, username);
         cachedMusicData = musicData;
         lastFetchTime = currentTime;
 
@@ -22,7 +32,7 @@ export async function GET() {
             headers: { "Content-Type": "application/json" },
         });
     } catch (error) {
-        return new Response(JSON.stringify({ error: "Failed to fetch data" }), {
+        return new Response(JSON.stringify({ error: "Failed to fetch data!" }), {
             status: 500,
             headers: { "Content-Type": "application/json" },
         });
