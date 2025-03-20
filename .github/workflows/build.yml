@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build
-        uses: withastro/action@v3
+        uses: withastro/action@v4
