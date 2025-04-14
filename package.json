@@ -2,7 +2,7 @@
     "name": "website",
     "type": "module",
     "version": "0.0.1",
-    "packageManager": "pnpm@10.8.0",
+    "packageManager": "pnpm@10.8.1",
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "dev": "astro dev",
