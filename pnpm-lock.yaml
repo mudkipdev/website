@@ -13,13 +13,13 @@ importers:
         version: 0.9.4(typescript@5.8.3)
       '@astrojs/cloudflare':
         specifier: ^12.5.1
-        version: 12.5.1(astro@5.7.8(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0))(yaml@2.5.0)
+        version: 12.5.1(astro@5.7.9(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0))(yaml@2.5.0)
       '@astrojs/rss':
         specifier: ^4.0.11
         version: 4.0.11
       astro:
-        specifier: ^5.7.8
-        version: 5.7.8(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0)
+        specifier: ^5.7.9
+        version: 5.7.9(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0)
       remark:
         specifier: ^15.0.1
         version: 15.0.1
@@ -843,8 +843,8 @@ packages:
   as-table@1.0.55:
     resolution: {integrity: sha512-xvsWESUJn0JN421Xb9MQw6AsMHRCUknCe0Wjlxvjud80mU4E6hQf1A6NzQKcYNmYw62MfzEtXc+badstZP3JpQ==}
 
-  astro@5.7.8:
-    resolution: {integrity: sha512-82ku6+wOGXP5c5+YOkBzEGJ/k8/GVSeN0xD/TNUrPf5nvWpGGpngxtUAwuruKF6wIxRC1/SwlUVCs/4QT98iZQ==}
+  astro@5.7.9:
+    resolution: {integrity: sha512-P0cLijpmu4xZEXIh83ROOJqiCWRA7KSo24nhRLIjbMkiPElXu2qL1c28m7xhylCXeHa0lnCGPLyNjs1Wx3GyxA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2156,12 +2156,12 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.5.1(astro@5.7.8(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0))(yaml@2.5.0)':
+  '@astrojs/cloudflare@12.5.1(astro@5.7.9(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0))(yaml@2.5.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/underscore-redirects': 0.6.1
       '@cloudflare/workers-types': 4.20250327.0
-      astro: 5.7.8(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0)
+      astro: 5.7.9(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0)
       tinyglobby: 0.2.12
       vite: 6.2.6(yaml@2.5.0)
       wrangler: 4.6.0(@cloudflare/workers-types@4.20250327.0)
@@ -2810,7 +2810,7 @@ snapshots:
     dependencies:
       printable-characters: 1.0.42
 
-  astro@5.7.8(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0):
+  astro@5.7.9(rollup@4.34.8)(typescript@5.8.3)(yaml@2.5.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
