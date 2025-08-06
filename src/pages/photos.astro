@@ -40,72 +40,20 @@ try {
         ) : photos.length === 0 ? (
             <span class="error">No photos found.</span>
         ) : (
-            <div>
-                <div class="photo-arrows">
-                    <span id="left-arrow">←</span>
-                    <span id="right-arrow">→</span>
-                </div>
-                <div class="photo-grid" id="photo-grid">
-                    {photos.map(photo => {
-                        const slug = photo.replace(/\.[^/.]+$/, "");
-                        const photoUrl = `https://photos.mudkip.dev/${photo}`;
-                        return (
-                            <a href={`/photos/${slug}`} class="photo">
-                                <img src={photoUrl} loading="lazy" />
-                            </a>
-                        );
-                    })}
-                </div>
+            <div class="photo-grid">
+                {photos.map(photo => {
+                    const slug = photo.replace(/\.[^/.]+$/, "");
+                    const photoUrl = `https://photos.mudkip.dev/${photo}`;
+                    return (
+                        <a href={`/photos/${slug}`} class="photo">
+                            <img src={photoUrl} loading="lazy" />
+                        </a>
+                    );
+                })}
             </div>
         )}
     </div>
 </Page>
-
-<script>
-    let currentPage = 0;
-    const photosPerPage = 4;
-
-    function setupCarousel() {
-        const leftArrow = document.getElementById("left-arrow")!!;
-        const rightArrow = document.getElementById("right-arrow")!!;
-        const photoGrid = document.getElementById("photo-grid")!!;
-
-        if (!leftArrow || !rightArrow || !photoGrid) return;
-
-        const allPhotos = Array.from(photoGrid.children);
-        const totalPages = Math.ceil(allPhotos.length / photosPerPage);
-
-        function showPage(pageIndex: number) {
-            allPhotos.forEach((photo, index) => {
-                const startIndex = pageIndex * photosPerPage;
-                const endIndex = startIndex + photosPerPage;
-                (photo as HTMLElement).style.display =
-                    (index >= startIndex && index < endIndex) ? "block" : "none";
-            });
-
-            leftArrow.style.opacity = pageIndex > 0 ? "1" : "0.3";
-            rightArrow.style.opacity = pageIndex < totalPages - 1 ? "1" : "0.3";
-        }
-
-        leftArrow.addEventListener("click", () => {
-            if (currentPage > 0) {
-                currentPage--;
-                showPage(currentPage);
-            }
-        });
-
-        rightArrow.addEventListener("click", () => {
-            if (currentPage < totalPages - 1) {
-                currentPage++;
-                showPage(currentPage);
-            }
-        });
-
-        showPage(0);
-    }
-
-    document.addEventListener("DOMContentLoaded", setupCarousel);
-</script>
 
 <style>
     #photos {
@@ -113,29 +61,10 @@ try {
         max-width: none;
     }
 
-    .photo-arrows {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1.25em;
-        margin-bottom: 1em;
-    }
-
     .photo-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-    }
-
-    #left-arrow, #right-arrow {
-        user-select: none;
-        color: var(--surface-5);
-        font-size: 3em;
-    }
-
-    #left-arrow:hover, #right-arrow:hover {
-        color: var(--text);
-        cursor: pointer;
     }
 
     .photo {

@@ -2,7 +2,7 @@
 import Page from "@layouts/Page.astro";
 import Cards from "@components/Cards.astro";
 import Card from "@components/Card.astro";
-import Date from "@components/Date.astro";
+import DateComponent from "@components/Date.astro";
 
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
@@ -19,7 +19,12 @@ const posts = await getCollection("blog");
                         description={post.data.description}
                         url={"/blog/" + post.slug}
                     >
-                        <Date slot="after" date={post.data.date} />
+                        <DateComponent slot="after" date={new Date(Date.UTC(
+                            post.data.date.getUTCFullYear(),
+                            post.data.date.getUTCMonth(),
+                            post.data.date.getUTCDate(),
+                            18, 0, 0
+                        ))} />
                     </Card>
                 ))}
             </Cards>

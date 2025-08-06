@@ -49,179 +49,35 @@ try {
 }
 ---
 <Page title="photos">
-    <div id="photo-container">
-        {error ? (
-            <span class="error">{error}</span>
-        ) : photoUrl ? (
-            <div class="photo-view">
-                <div class="photo-navigation">
-                    <a href="/photos" class="button">← back to photos</a>
-                </div>
-
-                <img src={photoUrl}  id="main-photo" />
-
-                <div class="photo-metadata">
-                    <h2>metadata</h2>
-                    <div id="exif-info">loading metadata...</div>
-                </div>
-            </div>
-        ) : (
-            <span class="error">Photo not found.</span>
-        )}
-    </div>
+    {error ? (
+        <span class="error">{error}</span>
+    ) : photoUrl ? (
+        <div>
+            <a href="/photos" class="button">← back to photos</a>
+            <img src={photoUrl} />
+        </div>
+    ) : (
+        <span class="error">Photo not found.</span>
+    )}
 </Page>
 
-<script>
-    async function loadExifData() {
-        const img = document.getElementById("main-photo") as HTMLImageElement;
-        const exifDiv = document.getElementById("exif-info");
-
-        if (!img || !exifDiv) return;
-
-        try {
-            const { parse } = await import("exifr");
-
-            await new Promise((resolve, reject) => {
-                if (img.complete) {
-                    resolve(true);
-                } else {
-                    img.onload = () => resolve(true);
-                    img.onerror = () => reject(new Error("Image failed to load"));
-                    setTimeout(() => reject(new Error("Image load timeout")), 10000);
-                }
-            });
-
-            const exifData = await parse(img.src);
-
-            if (!exifData || Object.keys(exifData).length === 0) {
-                exifDiv.innerHTML = "<p>no metadata available</p>";
-                return;
-            }
-
-            let html = "<table>";
-
-            if (exifData.Make || exifData.Model) {
-                html += `<tr><td>camera</td><td>${exifData.Make || ""} ${exifData.Model || ""}`.trim() + "</td></tr>";
-            }
-
-            if (exifData.DateTime || exifData.DateTimeOriginal) {
-                const date = exifData.DateTimeOriginal || exifData.DateTime;
-                html += `<tr><td>date taken</td><td>${new Date(date).toLocaleString()}</td></tr>`;
-            }
-
-            if (exifData.ExposureTime) {
-                html += `<tr><td>shutter speed</td><td>1/${Math.round(1/exifData.ExposureTime)}s</td></tr>`;
-            }
-
-            if (exifData.FNumber) {
-                html += `<tr><td>aperture</td><td>f/${exifData.FNumber}</td></tr>`;
-            }
-
-            if (exifData.ISO) {
-                html += `<tr><td>iso</td><td>${exifData.ISO}</td></tr>`;
-            }
-
-            if (exifData.FocalLength) {
-                html += `<tr><td>focal length</td><td>${exifData.FocalLength}mm</td></tr>`;
-            }
-
-            if (exifData.ExifImageWidth && exifData.ExifImageHeight) {
-                html += `<tr><td>dimensions</td><td>${exifData.ExifImageWidth} × ${exifData.ExifImageHeight}</td></tr>`;
-            }
-
-            if (exifData.latitude && exifData.longitude) {
-                html += `<tr><td>location</td><td>${exifData.latitude.toFixed(6)}, ${exifData.longitude.toFixed(6)}</td></tr>`;
-            }
-
-            html += "</table>";
-            exifDiv.innerHTML = html;
-
-        } catch (error) {
-            console.error("Error parsing EXIF data:", error);
-            exifDiv.innerHTML = "<p>error loading metadata</p>";
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", loadExifData);
-</script>
-
 <style>
-    #photo-container {
-        width: 100%;
-        max-width: none;
-    }
-
-    .photo-view {
+    div:not(.button) {
         display: flex;
         flex-direction: column;
         gap: 2em;
     }
 
-    .photo-navigation {
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .photo-display {
-        display: flex;
-        justify-content: center;
-        background: var(--surface-3);
-        padding: 1em;
-    }
-
-    .photo-display img {
+    img {
         max-width: 100%;
         max-height: 70vh;
         object-fit: contain;
         display: block;
     }
 
-    .photo-metadata {
-        background: var(--surface-3);
-        padding: 1.5em;
-    }
-
-    .photo-metadata h2 {
-        margin-bottom: 1em;
-        font-size: 1.4em;
-    }
-
-    .photo-metadata table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .photo-metadata td {
-        padding: 0.5em 0;
-        border-bottom: 1px solid var(--surface-4);
-        font-size: 1.1em;
-    }
-
-    .photo-metadata td:first-child {
-        font-weight: bold;
-        width: 30%;
-        color: var(--accent);
-    }
-
-    .photo-metadata tr:last-child td {
-        border-bottom: none;
-    }
-
     @media (max-width: 768px) {
-        .photo-display {
-            padding: 0.5em;
-        }
-
-        .photo-display img {
+        img {
             max-height: 50vh;
-        }
-
-        .photo-metadata {
-            padding: 1em;
-        }
-
-        .photo-metadata td:first-child {
-            width: 40%;
         }
     }
 </style>
