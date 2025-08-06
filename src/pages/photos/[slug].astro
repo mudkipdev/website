@@ -29,8 +29,8 @@ try {
 
     if (response.Contents) {
         const photo = response.Contents
-            .filter(obj => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
-            .find(obj => {
+            .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
+            .find((obj: any) => {
                 const objSlug = obj.Key!.replace(/\.[^/.]+$/, "");
                 return objSlug === slug;
             });

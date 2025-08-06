@@ -25,8 +25,8 @@ try {
 
     if (response.Contents) {
         photos = response.Contents
-            .filter(obj => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
-            .map(obj => obj.Key!)
+            .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
+            .map((obj: any) => obj.Key!)
             .sort();
     }
 } catch (err) {
