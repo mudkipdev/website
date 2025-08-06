@@ -1,8 +1,7 @@
 ---
 import Page from "@layouts/Page.astro";
-import Accordion from "@components/Accordion.astro";
-import Card from "@components/cards/Card.astro";
-import Cards from "@components/cards/Cards.astro";
+import Cards from "@components/Cards.astro";
+import Card from "@components/Card.astro";
 ---
 <Page title="projects">
     <Cards>
@@ -16,19 +15,4 @@ import Cards from "@components/cards/Cards.astro";
             description="A Minecraft server featuring fun and unique minigames built with Minestom."
         />
     </Cards>
-
-    <Accordion title="planned projects">
-        <ul>
-            <li>tui code editor</li>
-            <li>programming language</li>
-            <li>a "tools" web app (convert between file formats, encode to base64/rot13, optimize images, etc)</li>
-			<li>decentralized chat app that would be p2p instead of federated</li>
-        </ul>
-    </Accordion>
 </Page>
-
-<style>
-    li {
-        margin: 0.5em 0em 0.5em 1em;
-    }
-</style>

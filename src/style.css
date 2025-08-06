@@ -47,7 +47,7 @@ body {
     flex-direction: column;
 
     margin: auto;
-    max-width: 40em;
+    max-width: 45em;
 
     font-family: Terminus, monospace;
     font-size: 1.2em;
@@ -68,6 +68,14 @@ h1 {
 
 p, a, li, span, time {
     font-size: 1.2em;
+}
+
+#content a {
+    font-size: inherit !important; /* i have no idea why this is needed */
+}
+
+li {
+    margin-left: 1.25em;
 }
 
 hr {
@@ -150,7 +158,7 @@ button:not(:disabled):active, a.button:not(:disabled):active {
     transform: translateX(-50%) translateY(100%);
     width: max-content;
     max-width: 30vw;
-    padding: 14px;
+    padding: 12px;
     bottom: -5px;
     left: 50%;
 

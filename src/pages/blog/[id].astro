@@ -1,6 +1,5 @@
 ---
 import { getEntry, render } from "astro:content";
-import { stripContent } from "@content/config";
 import Page from "@layouts/Page.astro";
 
 const { id } = Astro.params;
@@ -9,13 +8,12 @@ const post = await getEntry("blog", id);
 if (post == undefined) return Astro.redirect("/404");
 
 const { Content } = await render(post);
-const stripped = await stripContent(post);
-const path = "~/blog/" + post.data.title.toLowerCase().replaceAll(" ", "-") + ".txt";
+const path = "~/blog/" + post.slug.toLowerCase().replaceAll(" ", "-") + ".txt";
 ---
 <Page title={post.data.title} path={path}>
     <Fragment slot="metadata">
         <meta property="og:site_name" content="mudkip" />
-        <meta property="og:description" content={stripped} />
+        <meta property="og:description" content={post.data.description} />
     </Fragment>
 
     <Content />

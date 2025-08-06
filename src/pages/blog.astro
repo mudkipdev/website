@@ -1,7 +1,8 @@
 ---
 import Page from "@layouts/Page.astro";
-import Post from "@components/cards/Post.astro";
-import Cards from "@components/cards/Cards.astro";
+import Cards from "@components/Cards.astro";
+import Card from "@components/Card.astro";
+import Date from "@components/Date.astro";
 
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
@@ -13,7 +14,13 @@ const posts = await getCollection("blog");
         : (
             <Cards>
                 {posts.map(post => (
-                    <Post post={post} />
+                    <Card
+                        title={post.data.title}
+                        description={post.data.description}
+                        url={"/blog/" + post.slug}
+                    >
+                        <Date slot="after" date={post.data.date} />
+                    </Card>
                 ))}
             </Cards>
         )
