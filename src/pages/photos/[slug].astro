@@ -48,7 +48,7 @@ try {
     error = "Failed to load photo!";
 }
 ---
-<Page title="photos">
+<Page title="photos" path={"~/photos/" + photoKey}>
     {error ? (
         <span class="error">{error}</span>
     ) : photoUrl ? (

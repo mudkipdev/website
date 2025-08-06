@@ -9,7 +9,7 @@ interface Props {
     path?: string;
 }
 
-const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") } = Astro.props;
+const { title, path = "~/" + title.toLowerCase().replaceAll(" ", "-") + ".md" } = Astro.props;
 ---
 <html lang="en">
     <head>

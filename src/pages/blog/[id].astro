@@ -8,7 +8,7 @@ const post = await getEntry("blog", id);
 if (post == undefined) return Astro.redirect("/404");
 
 const { Content } = await render(post);
-const path = "~/blog/" + post.slug.toLowerCase().replaceAll(" ", "-") + ".txt";
+const path = "~/blog/" + post.slug.toLowerCase().replaceAll(" ", "-") + ".md";
 ---
 <Page title={post.data.title} path={path}>
     <Fragment slot="metadata">

@@ -7,7 +7,7 @@ import DateComponent from "@components/Date.astro";
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
 ---
-<Page title="blog">
+<Page title="blog" path="~/blog">
     {
         posts.length == 0
         ? <p>there are currently no published posts</p>
