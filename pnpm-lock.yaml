@@ -12,8 +12,8 @@ importers:
         specifier: ^0.9.4
         version: 0.9.4(typescript@5.9.2)
       '@astrojs/cloudflare':
-        specifier: ^12.6.2
-        version: 12.6.2(@types/node@22.15.17)(astro@5.12.8(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0))(yaml@2.5.0)
+        specifier: ^12.6.3
+        version: 12.6.3(@types/node@22.15.17)(astro@5.12.9(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0))(yaml@2.5.0)
       '@astrojs/rss':
         specifier: ^4.0.12
         version: 4.0.12
@@ -21,8 +21,8 @@ importers:
         specifier: ^3.862.0
         version: 3.862.0
       astro:
-        specifier: ^5.12.8
-        version: 5.12.8(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0)
+        specifier: ^5.12.9
+        version: 5.12.9(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0)
       exifr:
         specifier: ^7.1.3
         version: 7.1.3
@@ -44,8 +44,8 @@ packages:
     peerDependencies:
       typescript: ^5.0.0
 
-  '@astrojs/cloudflare@12.6.2':
-    resolution: {integrity: sha512-hBFymv97EETuGinmuvlcp/EmlLGbpDlfYC3C1xZEcefyegQMSe1PNUDT+QE7Ocv2IQKuuU1sYHVo8tEAl4HN+g==}
+  '@astrojs/cloudflare@12.6.3':
+    resolution: {integrity: sha512-xhJptF5tU2k5eo70nIMyL1Udma0CqmUEnGSlGyFflLqSY82CRQI6nWZ/xZt0ZvmXuErUjIx0YYQNfZsz5CNjLQ==}
     peerDependencies:
       astro: ^5.0.0
 
@@ -1076,8 +1076,8 @@ packages:
   as-table@1.0.55:
     resolution: {integrity: sha512-xvsWESUJn0JN421Xb9MQw6AsMHRCUknCe0Wjlxvjud80mU4E6hQf1A6NzQKcYNmYw62MfzEtXc+badstZP3JpQ==}
 
-  astro@5.12.8:
-    resolution: {integrity: sha512-KkJ7FR+c2SyZYlpakm48XBiuQcRsrVtdjG5LN5an0givI/tLik+ePJ4/g3qrAVhYMjJOxBA2YgFQxANPiWB+Mw==}
+  astro@5.12.9:
+    resolution: {integrity: sha512-cZ7kZ61jyE5nwSrFKSRyf5Gds+uJELqQxJFqMkcgiWQvhWZJUSShn8Uz3yc9WLyLw5Kim5P5un9SkJSGogfEZQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2405,12 +2405,12 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.6.2(@types/node@22.15.17)(astro@5.12.8(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0))(yaml@2.5.0)':
+  '@astrojs/cloudflare@12.6.3(@types/node@22.15.17)(astro@5.12.9(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0))(yaml@2.5.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.7.1
       '@astrojs/underscore-redirects': 1.0.0
       '@cloudflare/workers-types': 4.20250513.0
-      astro: 5.12.8(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0)
+      astro: 5.12.9(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0)
       tinyglobby: 0.2.13
       vite: 6.3.5(@types/node@22.15.17)(yaml@2.5.0)
       wrangler: 4.15.0(@cloudflare/workers-types@4.20250513.0)
@@ -3799,7 +3799,7 @@ snapshots:
     dependencies:
       printable-characters: 1.0.42
 
-  astro@5.12.8(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0):
+  astro@5.12.9(@types/node@22.15.17)(rollup@4.40.1)(typescript@5.9.2)(yaml@2.5.0):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.7.1
