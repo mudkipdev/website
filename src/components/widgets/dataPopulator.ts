@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (musicData != null && !("error" in musicData)) {
         const style = musicData.time == null
-            ? "color: var(--surface-5); animation: blink 1.5s infinite"
+            ? "color: var(--ctp-macchiato-green); animation: blink 1.5s infinite"
             : "color: var(--surface-5)";
 
         musicElement.innerHTML = `

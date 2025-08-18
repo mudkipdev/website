@@ -3,9 +3,10 @@ import Page from "@layouts/Page.astro";
 import Cards from "@components/Cards.astro";
 import Card from "@components/Card.astro";
 import DateComponent from "@components/Date.astro";
-
 import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
+
+const posts = (await getCollection("blog"))
+    .sort((left, right) => right.data.date.getTime() - left.data.date.getTime());
 ---
 <Page title="blog" path="~/blog">
     {
