@@ -17,11 +17,19 @@
 <style>
     nav {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: space-evenly;
         user-select: none;
-        gap: 1em;
+        gap: 16px;
+    }
+
+    @media (max-width: 700px) {
+        nav {
+            gap: 6px;
+        }
+
+        nav a {
+            font-size: 20px;
+        }
     }
 
     nav span.divider {

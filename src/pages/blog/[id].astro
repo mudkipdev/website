@@ -21,6 +21,34 @@ const path = "~/blog/" + post.slug.toLowerCase().replaceAll(" ", "-") + ".md";
 
 {/* why is global needed? */}
 <style is:global>
+    #content h1, #content h2 {
+        margin: 8px 0;
+    }
+
+    #content h2:nth-of-type(5n + 1) {
+        color: var(--ctp-macchiato-red);
+    }
+
+    #content h2:nth-of-type(5n + 2) {
+        color: var(--ctp-macchiato-peach);
+    }
+
+    #content h2:nth-of-type(5n + 3) {
+        color: var(--ctp-macchiato-yellow);
+    }
+
+    #content h2:nth-of-type(5n + 4) {
+        color: var(--ctp-macchiato-green);
+    }
+
+    #content h2:nth-of-type(5n + 5) {
+        color: var(--ctp-macchiato-blue);
+    }
+
+    #content h2:nth-of-type(5n + 6) {
+        color: var(--ctp-macchiato-mauve);
+    }
+
     #content p:has(img) {
         text-align: center;
     }

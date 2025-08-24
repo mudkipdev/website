@@ -11,7 +11,7 @@ const { title, icon } = Astro.props;
     <img src={icon} width="64" height="64">
 
     <div class="content">
-        <p><b>{title}</b></p>
+        <p style="user-select: none"><b>{title}</b></p>
         <hr>
         <slot />
     </div>
@@ -20,15 +20,22 @@ const { title, icon } = Astro.props;
 <style>
     .widget {
         display: flex;
-        align-items: center;
         text-align: left;
         padding: 1.5em;
-        gap: 1.5em;
+        gap: 30px;
         border: 2px solid var(--surface-3);
-        width: 25em;
+        width: 550px;
+        min-height: 120px;
+    }
+
+    @media (max-width: 700px) {
+        .widget {
+            width: 400px;
+        }
     }
 
     .widget img {
+        align-self: center;
         user-select: none;
     }
 
