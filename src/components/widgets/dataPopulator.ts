@@ -1,26 +1,32 @@
 import timeAgo from "./timeAgo";
+import toCelsius from "./toCelsius";
+
+const failedMessage = `<span class="error">failed to fetch data!</span>`;
 
 async function fetchData() {
     try {
-        const [codingResponse, musicResponse] = await Promise.all([
+        const [codingResponse, musicResponse, weatherResponse] = await Promise.all([
             fetch("/api/coding"),
             fetch("/api/music"),
+            fetch("/api/weather")
         ]);
 
         const codingData = await codingResponse.json();
         const musicData = await musicResponse.json();
+        const weatherData = await weatherResponse.json();
 
-        return { codingData, musicData };
+        return { codingData, musicData, weatherData };
     } catch (error) {
         console.error("Error fetching data:", error);
-        return { codingData: null, musicData: null };
+        return { codingData: null, musicData: null, weatherData: null };
     }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const { codingData, musicData } = await fetchData();
+    const { codingData, musicData, weatherData } = await fetchData();
     const codingElement = document.querySelector("#coding-data")!;
     const musicElement = document.querySelector("#music-data")!;
+    const weatherElement = document.querySelector("#weather-data")!;
 
     if (codingData != null && !("error" in codingData)) {
         codingElement.innerHTML = `
@@ -31,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             </p>
         `;
     } else {
-        codingElement.innerHTML = `<span class="error">failed to fetch data!</span>`;
+        codingElement.innerHTML = failedMessage;
     }
 
     if (musicData != null && !("error" in musicData)) {
@@ -43,6 +49,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p>${musicData.artist} - ${musicData.track}</p>
             <p style="${style}">${musicData.time ? timeAgo(musicData.time) : "now playing"}</p>`;
     } else {
-        musicElement.innerHTML = `<span class="error">failed to fetch data!</span>`;
+        musicElement.innerHTML = failedMessage;
+    }
+
+    if (weatherData != null && !("error" in weatherData)) {
+        weatherElement.innerHTML = `
+            <p><b>temperature:</b> ${Math.round(weatherData.temperature)}°F <span style="color: var(--surface-5); font-size: inherit">(${toCelsius(weatherData.temperature)}°C)</span>
+            <p><b>conditions:</b> ${weatherData.conditions}</p>`;
+    } else {
+        weatherElement.innerHTML = failedMessage;
     }
 });
