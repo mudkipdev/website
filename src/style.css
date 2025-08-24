@@ -48,7 +48,7 @@ body {
     flex-direction: column;
 
     margin: auto;
-    max-width: 860px;
+    max-width: 850px;
 
     background: var(--background);
     color: var(--text);
