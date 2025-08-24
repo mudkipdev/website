@@ -96,7 +96,7 @@ a:not(.badge):not(.button):hover {
 /* Buttons */
 
 button, a.button {
-    padding: 6px 13px;
+    padding: 6px 16px;
     max-width: 160px;
     border: none;
     outline: none;
@@ -110,6 +110,8 @@ button, a.button {
     box-shadow:
         inset 2px 2px var(--surface-5),
         inset -2px -2px var(--surface-1);
+
+    font-size: 18px;
 }
 
 button:not(:disabled):hover, a.button:not(:disabled):hover {
