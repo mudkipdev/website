@@ -18,3 +18,18 @@ const path = "~/blog/" + post.slug.toLowerCase().replaceAll(" ", "-") + ".md";
 
     <Content />
 </Page>
+
+{/* why is global needed? */}
+<style is:global>
+    #content p:has(img) {
+        text-align: center;
+    }
+
+    #content img {
+        max-height: 350px;
+        max-width: 100%;
+        margin-top: 1em;
+        width: auto;
+        height: auto;
+    }
+</style>
