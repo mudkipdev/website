@@ -63,10 +63,9 @@ try {
     }
 
     .photo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        columns: 300px;
         gap: 6px;
-        grid-auto-rows: max-content;
+        column-fill: balance;
     }
 
     .photo {
@@ -74,7 +73,9 @@ try {
         background: var(--surface-3);
         overflow: hidden;
         text-decoration: none;
-        display: block;
+        display: inline-block;
+        width: 100%;
+        break-inside: avoid;
     }
 
     .photo img {
@@ -86,7 +87,7 @@ try {
 
     @media (max-width: 768px) {
         .photo-grid {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            columns: 200px;
             gap: 4px;
         }
     }
