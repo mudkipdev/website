@@ -30,6 +30,7 @@ try {
     if (response.Contents) {
         const photo = response.Contents
             .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
+            .filter((obj: any) => !obj.Key?.startsWith("preview_"))
             .find((obj: any) => {
                 const objSlug = obj.Key!.replace(/\.[^/.]+$/, "");
                 return objSlug === slug;
@@ -65,7 +66,7 @@ try {
     div:not(.button) {
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
     }
 
     img {

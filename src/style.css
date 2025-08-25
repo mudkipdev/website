@@ -82,12 +82,12 @@ hr {
     margin: 1em 0;
 }
 
-a:not(.button) {
+a:not(.button):not(img) {
     color: var(--color, var(--accent));
     font-weight: 700;
 }
 
-a:not(.badge):not(.button):hover {
+a:not(.button):not(img):hover {
     background: var(--color, var(--accent));
     color: var(--surface-1);
     text-decoration: none;

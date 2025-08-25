@@ -26,6 +26,7 @@ try {
     if (response.Contents) {
         photos = response.Contents
             .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
+            .filter((obj: any) => !obj.Key?.startsWith("preview_"))
             .map((obj: any) => obj.Key!)
             .sort();
     }
@@ -43,10 +44,10 @@ try {
             <div class="photo-grid">
                 {photos.map(photo => {
                     const slug = photo.replace(/\.[^/.]+$/, "");
-                    const photoUrl = `https://photos.mudkip.dev/${photo}`;
+                    const previewUrl = `https://photos.mudkip.dev/preview_${photo}`;
                     return (
                         <a href={`/photos/${slug}`} class="photo">
-                            <img src={photoUrl} loading="lazy" />
+                            <img src={previewUrl} loading="lazy" />
                         </a>
                     );
                 })}
@@ -63,13 +64,13 @@ try {
 
     .photo-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 6px;
+        grid-auto-rows: max-content;
     }
 
     .photo {
         cursor: pointer;
-        aspect-ratio: 4/3;
         background: var(--surface-3);
         overflow: hidden;
         text-decoration: none;
@@ -78,15 +79,14 @@ try {
 
     .photo img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
         transition: transform 0.3s ease;
     }
 
     @media (max-width: 768px) {
         .photo-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 4px;
         }
     }
