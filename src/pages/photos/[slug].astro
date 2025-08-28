@@ -49,7 +49,11 @@ try {
     error = "Failed to load photo!";
 }
 ---
-<Page title="photos" path={"~/photos/" + photoKey}>
+<Page title="{photoKey}" path={"~/photos/" + photoKey}>
+    <Fragment slot="metadata">
+        <meta property="og:image" content={photoUrl}>
+    </Fragment>
+
     {error ? (
         <span class="error">{error}</span>
     ) : photoUrl ? (
