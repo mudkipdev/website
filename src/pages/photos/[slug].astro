@@ -49,9 +49,10 @@ try {
     error = "Failed to load photo!";
 }
 ---
-<Page title="{photoKey}" path={"~/photos/" + photoKey}>
+<Page title={photoKey!!} path={"~/photos/" + photoKey}>
     <Fragment slot="metadata">
         <meta property="og:image" content={photoUrl}>
+        <meta name="twitter:card" content={photoUrl}>
     </Fragment>
 
     {error ? (
