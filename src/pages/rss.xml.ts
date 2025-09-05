@@ -9,13 +9,16 @@ export async function GET(context: APIContext) {
         site: context.site!,
         title: "mudkip's blog",
         description: "welcome to my blog, i will occasionally post my thoughts and things i find interesting here.",
-        items: posts.map(post => ({
-            link: `/blog/${post.slug}`,
-            title: post.data.title,
-            description: post.data.description,
-            pubDate: post.data.date,
-            content: post.body,
-        })),
+        items: posts
+            .filter(post => post.data.published)
+            .sort((left, right) => right.data.date.getTime() - left.data.date.getTime())
+            .map(post => ({
+                link: `/blog/${post.slug}`,
+                title: post.data.title,
+                description: post.data.description,
+                pubDate: post.data.date,
+                content: post.body,
+            })),
         customData: "<language>en-us</language>",
         trailingSlash: false,
     })

@@ -27,22 +27,11 @@ try {
         const filteredPhotos = response.Contents
             .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
             .filter((obj: any) => !obj.Key?.startsWith("preview_"));
-            
+
         const sortedPhotos = filteredPhotos.sort((a: any, b: any) => {
-            if (a.Metadata?.time && b.Metadata?.time) {
-                const timeA = new Date(parseInt(a.Metadata.time) * 1000);
-                const timeB = new Date(parseInt(b.Metadata.time) * 1000);
-                return timeB.getTime() - timeA.getTime();
-            }
             return b.Key!.localeCompare(a.Key!);
         });
-        
-        console.table(sortedPhotos.map((obj: any) => ({
-            filename: obj.Key,
-            timestamp: obj.Metadata?.time || "NO TIME METADATA",
-            date: obj.Metadata?.time ? new Date(parseInt(obj.Metadata.time) * 1000).toLocaleString() : "NO TIME METADATA"
-        })));
-        
+
         photos = sortedPhotos.map((obj: any) => obj.Key!);
     }
 } catch (err) {

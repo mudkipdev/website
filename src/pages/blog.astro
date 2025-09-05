@@ -6,6 +6,7 @@ import DateComponent from "@components/Date.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog"))
+    .filter(post => post.data.published)
     .sort((left, right) => right.data.date.getTime() - left.data.date.getTime());
 ---
 <Page title="blog" path="~/blog">

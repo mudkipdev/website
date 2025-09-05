@@ -15,7 +15,9 @@ export default defineConfig({
     output: "server",
     adapter: cloudflare({
         imageService: "passthrough",
-        platformProxy: true
+        platformProxy: {
+            enabled: true
+        }
     }),
     vite: {
         define: {

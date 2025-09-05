@@ -171,3 +171,10 @@ button:not(:disabled):active, a.button:not(:disabled):active {
 :root:has([data-tooltip]:hover) [data-tooltip]:focus {
     display: none !important;
 }
+
+/* Code Blocks */
+pre:has(code) {
+    margin: 16px 0;
+    padding: 16px;
+    background-color: var(--surface-1) !important;
+}

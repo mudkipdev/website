@@ -7,7 +7,8 @@ export const collections = {
             title: z.string(),
             description: z.string(),
             date: z.date(),
-            tags: z.array(z.string()).default([])
+            tags: z.array(z.string()).default([]),
+            published: z.boolean().default(true)
         })
     })
 };
