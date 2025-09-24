@@ -28,9 +28,7 @@ try {
             .filter((obj: any) => obj.Key?.match(/\.(jpg|jpeg|png|gif|webp)$/i))
             .filter((obj: any) => !obj.Key?.startsWith("preview_"));
 
-        const sortedPhotos = filteredPhotos.sort((a: any, b: any) => {
-            return b.Key!.localeCompare(a.Key!);
-        });
+        const sortedPhotos = filteredPhotos.sort(() => Math.random() - 0.5);
 
         photos = sortedPhotos.map((obj: any) => obj.Key!);
     }
